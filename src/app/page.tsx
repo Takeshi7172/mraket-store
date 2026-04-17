@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Hero } from "@/components/features/home/Hero";
-import { FeaturedProducts } from "@/components/features/home/FeaturedProducts";
-import { BrandStatement } from "@/components/features/home/BrandStatement";
-import { TestimonialCarousel } from "@/components/features/home/TestimonialCarousel";
-import { HomeCTA } from "@/components/features/home/HomeCTA";
+import { HeroSection } from "@/components/features/home/HeroSection";
+import { MarqueeStrip } from "@/components/features/home/MarqueeStrip";
+import { StorySection } from "@/components/features/home/StorySection";
+import { HorizontalProducts } from "@/components/features/home/HorizontalProducts";
+import { StatsSection } from "@/components/features/home/StatsSection";
+import { PromoSection } from "@/components/features/home/PromoSection";
+import { TestimonialsSection } from "@/components/features/home/TestimonialsSection";
+import { HowToOrder } from "@/components/features/home/HowToOrder";
+import { FinalCTA } from "@/components/features/home/FinalCTA";
 
 export const metadata: Metadata = {
   title: "SENSO — Inspired парфюмерия и K-beauty в Астане",
@@ -14,11 +18,15 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <FeaturedProducts />
-      <BrandStatement />
-      <TestimonialCarousel />
-      <HomeCTA />
+      <HeroSection />
+      <MarqueeStrip />
+      <StorySection />
+      <HorizontalProducts />
+      <StatsSection />
+      <PromoSection />
+      <TestimonialsSection />
+      <HowToOrder />
+      <FinalCTA />
     </>
   );
 }

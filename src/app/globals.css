@@ -279,3 +279,38 @@
   background: #C9A96E;
   transition: all 0.3s ease;
 }
+
+/* ── New homepage animations ── */
+
+/* Cursor — hide default on desktop when custom cursor is active */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  a, button, [role="button"] {
+    cursor: none;
+  }
+}
+
+/* Horizontal scroll track */
+.horizontal-track {
+  will-change: transform;
+}
+
+/* Duotone photo overlay — applied via inline style, kept here as reference */
+
+/* Photo editorial treatment helper */
+.photo-editorial {
+  filter: sepia(20%) contrast(1.1) brightness(0.82);
+}
+
+/* Lenis body scroll lock class override */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}

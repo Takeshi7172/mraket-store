@@ -5,6 +5,8 @@ import "./globals.css";
 import { NavbarWrapper } from "@/components/features/layout/NavbarWrapper";
 import { Footer } from "@/components/features/layout/Footer";
 import { WhatsAppCTA } from "@/components/features/layout/WhatsAppCTA";
+import { LenisProvider } from "@/components/features/home/LenisProvider";
+import { CustomCursor } from "@/components/features/home/CustomCursor";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -42,13 +44,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="ru"
-      className={`${inter.variable} ${playfair.variable} h-full scroll-smooth`}
+      className={`${inter.variable} ${playfair.variable} h-full`}
     >
       <body className="min-h-full flex flex-col antialiased">
-        <NavbarWrapper />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppCTA />
+        <LenisProvider>
+          <CustomCursor />
+          <NavbarWrapper />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <WhatsAppCTA />
+        </LenisProvider>
       </body>
     </html>
   );
