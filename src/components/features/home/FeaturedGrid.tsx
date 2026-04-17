@@ -10,17 +10,17 @@ export function FeaturedGrid() {
 
   return (
     <section
-      className="py-20 px-6"
+      className="py-28 px-6"
       style={{ background: "#FFFCF5" }}
       aria-label="Избранные продукты"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-14">
           <p className="text-[#C9A96E] text-[10px] tracking-[0.5em] uppercase mb-3">
             Коллекция
           </p>
-          <h2 className="font-heading text-[#1A1A1A]" style={{ fontSize: "clamp(2rem,5vw,3rem)" }}>
+          <h2 className="font-heading text-[#1A1A1A]" style={{ fontSize: "clamp(2.2rem,5vw,3.2rem)" }}>
             Избранное
           </h2>
         </div>
@@ -42,7 +42,7 @@ export function FeaturedGrid() {
             >
               {/* Image */}
               <div
-                className="relative aspect-[3/4] bg-white overflow-hidden mb-4 hover:scale-[1.02] transition-transform duration-300 rounded-xl"
+                className="relative aspect-[3/4] bg-white overflow-hidden mb-4 group-hover:scale-[1.02] transition-transform duration-300 rounded-xl"
                 style={{ boxShadow: "0 4px 24px rgba(201,169,110,0.08)" }}
               >
                 <Image
@@ -51,6 +51,17 @@ export function FeaturedGrid() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 640px) 50vw, 25vw"
+                  style={{ filter: "sepia(20%) contrast(1.1) brightness(0.9)" }}
+                />
+
+                {/* Subtle bottom gradient to mask photo edges */}
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  aria-hidden="true"
+                  style={{
+                    background:
+                      "linear-gradient(to top, rgba(0,0,0,0.1) 0%, transparent 40%)",
+                  }}
                 />
 
                 {/* 2+1 badge */}
@@ -64,14 +75,14 @@ export function FeaturedGrid() {
               </div>
 
               {/* Info */}
-              <div className="space-y-1">
-                <p className="text-[10px] text-[#C9A96E] tracking-[0.3em] uppercase">
+              <div className="space-y-1.5">
+                <p className="text-xs text-[#C9A96E] tracking-[0.3em] uppercase">
                   {product.brand}
                 </p>
-                <h3 className="font-heading text-sm lg:text-base text-[#1A1A1A] leading-snug group-hover:text-[#C9A96E] transition-colors duration-200">
+                <h3 className="font-heading text-base lg:text-lg text-[#1A1A1A] leading-snug group-hover:text-[#C9A96E] transition-colors duration-200">
                   {product.name}
                 </h3>
-                <p className="text-sm font-medium text-[#1A1A1A]">
+                <p className="text-base font-semibold text-[#1A1A1A]">
                   {product.price.toLocaleString("ru-KZ")} ₸
                 </p>
               </div>
@@ -80,12 +91,13 @@ export function FeaturedGrid() {
         </motion.div>
 
         {/* Link to catalog */}
-        <div className="mt-12">
+        <div className="mt-14">
           <Link
             href="/catalog"
-            className="text-sm text-[#1A1A1A]/50 hover:text-[#C9A96E] transition-colors duration-200 tracking-widest uppercase"
+            className="group inline-flex items-center gap-2 text-base text-[#1A1A1A]/50 hover:text-[#C9A96E] transition-colors duration-200 tracking-widest uppercase"
           >
-            Весь каталог →
+            Весь каталог
+            <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
           </Link>
         </div>
       </div>

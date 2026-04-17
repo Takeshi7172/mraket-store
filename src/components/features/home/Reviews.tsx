@@ -36,16 +36,15 @@ function ReviewCard({ review }: ReviewCardProps) {
     <div
       className="p-7 space-y-4 rounded-2xl"
       style={{
-        background: "#ffffff",
-        border: "1px solid #E8E4DE",
-        boxShadow: "0 4px 24px rgba(201,169,110,0.08)",
+        background: "rgba(255,255,255,0.03)",
+        border: "1px solid rgba(201,169,110,0.1)",
       }}
     >
       <p className="text-[#C9A96E] text-lg leading-none" aria-hidden="true">
-        "
+        &ldquo;
       </p>
-      <p className="text-[#1A1A1A]/70 text-sm leading-relaxed">{review.text}</p>
-      <p className="text-[10px] text-[#1A1A1A]/40 tracking-[0.3em] uppercase">
+      <p className="text-[#F5F5F0]/70 text-sm leading-relaxed">{review.text}</p>
+      <p className="text-[10px] text-[#F5F5F0]/30 tracking-[0.3em] uppercase">
         {review.name}, {review.age}
       </p>
     </div>
@@ -55,8 +54,8 @@ function ReviewCard({ review }: ReviewCardProps) {
 export function Reviews() {
   return (
     <section
-      className="py-20 px-6"
-      style={{ background: "#FFFCF5" }}
+      className="py-24 px-6"
+      style={{ background: "#0A0A0A" }}
       aria-label="Отзывы клиентов"
     >
       <div className="max-w-7xl mx-auto">
@@ -66,7 +65,7 @@ export function Reviews() {
             Отзывы
           </p>
           <h2
-            className="font-heading text-[#1A1A1A]"
+            className="font-heading text-[#F5F5F0]"
             style={{ fontSize: "clamp(1.8rem,4vw,2.8rem)" }}
           >
             Говорят клиенты

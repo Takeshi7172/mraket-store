@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/features/home/HeroSection";
 import { BrandIntro } from "@/components/features/home/BrandIntro";
 import { FeaturedGrid } from "@/components/features/home/FeaturedGrid";
 import { StorySection } from "@/components/features/home/StorySection";
+import { HowToOrder } from "@/components/features/home/HowToOrder";
 import { PromoStrip } from "@/components/features/home/PromoStrip";
 import { Reviews } from "@/components/features/home/Reviews";
 import { FinalCTA } from "@/components/features/home/FinalCTA";
@@ -20,6 +21,7 @@ export default function HomePage() {
       <BrandIntro />
       <FeaturedGrid />
       <StorySection />
+      <HowToOrder />
       <PromoStrip />
       <Reviews />
       <FinalCTA />

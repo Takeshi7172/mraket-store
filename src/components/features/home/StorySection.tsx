@@ -3,14 +3,23 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+const GRAIN_SVG = `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E")`;
+
 export function StorySection() {
   return (
     <section
-      className="py-24 lg:py-36"
+      className="relative py-32 lg:py-44 overflow-hidden"
       style={{ background: "#0E0E0E" }}
       aria-label="Наш подход"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-16">
+      {/* Film grain */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.15]"
+        aria-hidden="true"
+        style={{ backgroundImage: GRAIN_SVG }}
+      />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image */}
           <motion.div
@@ -27,14 +36,15 @@ export function StorySection() {
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center"
-                style={{ filter: "sepia(15%) contrast(1.05) brightness(0.9)" }}
+                style={{ filter: "sepia(25%) contrast(1.15) brightness(0.82)" }}
               />
               {/* Gradient overlay */}
               <div
                 className="absolute inset-0"
+                aria-hidden="true"
                 style={{
                   background:
-                    "linear-gradient(160deg, rgba(201,169,110,0.12) 0%, transparent 40%, rgba(14,14,14,0.5) 100%)",
+                    "linear-gradient(160deg, rgba(201,169,110,0.12) 0%, transparent 40%, rgba(14,14,14,0.55) 100%)",
                 }}
               />
             </div>
@@ -54,7 +64,7 @@ export function StorySection() {
 
             <h2
               className="font-heading text-[#F5F5F0] leading-tight"
-              style={{ fontSize: "clamp(2rem,4.5vw,3.2rem)" }}
+              style={{ fontSize: "clamp(2.2rem,5vw,3.5rem)" }}
             >
               Каждый аромат —<br />
               <em className="text-[#C9A96E]">это состояние</em>

@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 
+const GRAIN_SVG = `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E")`;
+
 interface Step {
   number: string;
   title: string;
@@ -29,9 +31,16 @@ const STEPS: Step[] = [
 export function HowToOrder() {
   return (
     <section
-      className="relative py-28 lg:py-40 overflow-hidden"
+      className="relative py-32 lg:py-44 overflow-hidden"
       style={{ background: "#0A0A0A" }}
     >
+      {/* Film grain */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.15]"
+        aria-hidden="true"
+        style={{ backgroundImage: GRAIN_SVG }}
+      />
+
       {/* Decorative vertical line */}
       <div
         className="absolute left-1/2 top-0 bottom-0 w-px pointer-events-none hidden lg:block"
@@ -68,19 +77,28 @@ export function HowToOrder() {
                 transition={{ duration: 0.8, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
                 className="relative group"
               >
-                {/* Number */}
+                {/* Number circle */}
                 <div
-                  className="relative w-16 h-16 flex items-center justify-center mb-8 z-10 rounded-full"
+                  className="relative w-16 h-16 flex items-center justify-center mb-8 z-10 rounded-full transition-shadow duration-300"
                   style={{
                     background: "#0A0A0A",
                     border: "1px solid rgba(201,169,110,0.3)",
+                    boxShadow: "0 0 0 rgba(201,169,110,0)",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLDivElement).style.boxShadow =
+                      "0 0 20px rgba(201,169,110,0.15)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLDivElement).style.boxShadow =
+                      "0 0 0 rgba(201,169,110,0)";
                   }}
                 >
                   <span className="font-heading text-[#C9A96E] text-xl leading-none">{step.number}</span>
 
                   {/* Hover fill */}
                   <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
                     style={{ background: "rgba(201,169,110,0.08)" }}
                   />
                 </div>
