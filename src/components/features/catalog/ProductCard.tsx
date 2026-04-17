@@ -31,6 +31,14 @@ export function ProductCard({ product }: ProductCardProps) {
             {CATEGORY_LABELS[product.category]}
           </span>
         </div>
+        {/* 2+1 promo badge — perfumes only */}
+        {product.category === "perfume" && (
+          <div className="absolute top-3 right-3">
+            <span className="bg-[#C9A96E] text-[#0A0A0A] text-[9px] tracking-widest font-semibold uppercase px-2 py-1">
+              2+1
+            </span>
+          </div>
+        )}
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-[#0A0A0A]/0 group-hover:bg-[#0A0A0A]/25 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
           <span className="bg-[#C9A96E] text-[#0A0A0A] text-xs tracking-widest uppercase px-5 py-2.5 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">

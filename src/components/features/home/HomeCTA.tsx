@@ -24,9 +24,9 @@ export function HomeCTA() {
             id="home-cta-heading"
             className="font-heading text-4xl lg:text-5xl xl:text-6xl text-[#F5F5F0] leading-tight mb-6"
           >
-            Найдите свой
+            Твои чувства,
             <br />
-            <span className="text-[#C9A96E] italic">аромат</span>
+            <span className="text-[#C9A96E] italic">твой аромат</span>
           </h2>
           <p className="text-[#F5F5F0]/60 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
             Не знаете, что выбрать? Напишите нам в WhatsApp — поможем подобрать

@@ -19,6 +19,10 @@ export interface Product {
   featured?: boolean;
 }
 
+export const PROMO_2_PLUS_1 = "2+1 — купи 2 аромата, получи третий в подарок";
+export const FREE_DELIVERY_THRESHOLD = 5000;
+export const FREE_DELIVERY_TEXT = "Бесплатная доставка по Астане от 5 000 ₸";
+
 export const products: Product[] = [
   // ── Парфюмерия ──────────────────────────────────────────────────────────
   {
@@ -27,7 +31,7 @@ export const products: Product[] = [
     name: "Barakkat Rouge 540",
     brand: "AUMEKA",
     category: "perfume",
-    price: 1000,
+    price: 4500,
     volume: "60 мл",
     description:
       "Восточно-цветочный аромат с шафраном и жасмином — богатый, тёплый, незабываемый. Вдохновлён Maison Francis Kurkdjian Baccarat Rouge 540.",
@@ -46,7 +50,7 @@ export const products: Product[] = [
     name: "Lost Cherry",
     brand: "AUMEKA",
     category: "perfume",
-    price: 1000,
+    price: 4500,
     volume: "60 мл",
     description:
       "Соблазнительный сладкий аромат с тёмной вишней и ванилью. Дерзкий, чувственный, гипнотизирующий. Вдохновлён Tom Ford.",
@@ -65,7 +69,7 @@ export const products: Product[] = [
     name: "Tobacco Vanille",
     brand: "AUMEKA",
     category: "perfume",
-    price: 1000,
+    price: 4500,
     volume: "60 мл",
     description:
       "Культовый тёплый аромат с табаком и ванилью. Пряный, обволакивающий, уютный как вечер у камина. Вдохновлён Tom Ford.",
@@ -83,7 +87,7 @@ export const products: Product[] = [
     name: "BLEU for Men",
     brand: "AUMEKA",
     category: "perfume",
-    price: 1000,
+    price: 4500,
     volume: "65 мл",
     description:
       "Свежий дровяной аромат для современного мужчины. Мятная свежесть открывается тёплым кедром и сандалом. Вдохновлён Chanel.",
@@ -102,7 +106,7 @@ export const products: Product[] = [
     name: "CREAD 1790",
     brand: "AUMEKA",
     category: "perfume",
-    price: 1000,
+    price: 4500,
     volume: "60 мл",
     description:
       "Легендарный фруктово-дровяной аромат. Ананас, берёза и мускус создают подпись, которую узнают по всему миру. Вдохновлён Creed Aventus.",
@@ -120,7 +124,7 @@ export const products: Product[] = [
     name: "Bright Crystal",
     brand: "AUMEKA",
     category: "perfume",
-    price: 1000,
+    price: 4500,
     volume: "60 мл",
     description:
       "Лёгкий цветочный аромат с магнолией, лотосом и мускусом. Нежный, женственный, чистый как хрусталь. Вдохновлён Versace.",
@@ -138,7 +142,7 @@ export const products: Product[] = [
     name: "Le Fleur Narcotique",
     brand: "AUMEKA",
     category: "perfume",
-    price: 1000,
+    price: 4500,
     volume: "60 мл",
     description:
       "Пленительный белый цветочный аромат с пионом, мускусом и древесными нотами. Парижская чувственность в каждом флаконе. Вдохновлён Ex Nihilo.",
@@ -156,7 +160,7 @@ export const products: Product[] = [
     name: "J20",
     brand: "AUMEKA",
     category: "perfume",
-    price: 1000,
+    price: 4500,
     volume: "60 мл",
     description:
       "Минималистичный молекулярный аромат, построенный на Iso E Super и амброксане. Становится вашей второй кожей. Вдохновлён Escentric Molecules.",
@@ -211,9 +215,9 @@ export const products: Product[] = [
     id: "g-01",
     slug: "first-date-set",
     name: "Набор «First Date»",
-    brand: "MRAKET",
+    brand: "SENSO",
     category: "set",
-    price: 1500,
+    price: 8000,
     volume: "2 × 60 мл",
     description:
       "Два аромата на выбор из нашей парфюмерной коллекции. Идеальный способ открыть для себя AUMEKA или подарить близкому человеку.",
@@ -223,9 +227,9 @@ export const products: Product[] = [
     id: "g-02",
     slug: "gift-set",
     name: "Набор «Gift»",
-    brand: "MRAKET",
+    brand: "SENSO",
     category: "set",
-    price: 2000,
+    price: 5500,
     volume: "60 мл + маска",
     description:
       "Парфюм на выбор + маска для лица в подарочной упаковке. Забота о себе или идеальный подарок к любому поводу.",

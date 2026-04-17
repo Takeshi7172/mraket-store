@@ -19,18 +19,18 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "MRAKET — Inspired парфюмерия и K-beauty в Астане",
+  title: "SENSO — Inspired парфюмерия и K-beauty в Астане",
   description:
-    "Inspired парфюмерия от 1000₸ и корейская косметика в Астане. AUMEKA-вдохновлённые ароматы, уход за кожей, подарочные наборы. Заказ через WhatsApp.",
+    "Inspired парфюмерия AUMEKA от 4500₸ и корейская косметика в Астане. Те же ноты, что у люксовых брендов — честная цена. Акция 2+1 на все ароматы. Заказ через WhatsApp.",
   keywords:
-    "парфюмерия Астана, купить духи Астана, inspired парфюмерия, AUMEKA, корейская косметика, K-beauty Казахстан, духи 1000 тенге",
+    "парфюмерия Астана, купить духи Астана, inspired парфюмерия, AUMEKA, корейская косметика, K-beauty Казахстан, духи 4500 тенге, бесплатная доставка Астана",
   openGraph: {
-    title: "MRAKET — Inspired парфюмерия и K-beauty в Астане",
+    title: "SENSO — Inspired парфюмерия и K-beauty в Астане",
     description:
-      "Inspired парфюмерия от 1000₸ и корейская косметика. Заказ через WhatsApp.",
+      "Inspired парфюмерия от 4500₸ и корейская косметика. Акция 2+1 на все ароматы. Заказ через WhatsApp.",
     type: "website",
     locale: "ru_KZ",
-    siteName: "MRAKET",
+    siteName: "SENSO",
   },
 };
 

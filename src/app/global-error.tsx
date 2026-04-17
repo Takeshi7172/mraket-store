@@ -1,6 +1,7 @@
 "use client";
 
 interface GlobalErrorProps {
+  error: Error & { digest?: string };
   reset: () => void;
 }
 
@@ -8,7 +9,7 @@ export default function GlobalError({ reset }: GlobalErrorProps) {
   return (
     <html lang="ru">
       <head>
-        <title>Ошибка — MRAKET</title>
+        <title>Ошибка — SENSO</title>
       </head>
       <body
         style={{
@@ -41,7 +42,7 @@ export default function GlobalError({ reset }: GlobalErrorProps) {
             Что-то пошло не так
           </h1>
           <button
-            onClick={() => reset()}
+            onClick={reset}
             style={{
               background: "#C9A96E",
               color: "#0A0A0A",

@@ -6,9 +6,9 @@ import { TestimonialCarousel } from "@/components/features/home/TestimonialCarou
 import { HomeCTA } from "@/components/features/home/HomeCTA";
 
 export const metadata: Metadata = {
-  title: "MRAKET — Inspired парфюмерия и K-beauty в Астане",
+  title: "SENSO — Inspired парфюмерия и K-beauty в Астане",
   description:
-    "Inspired парфюмерия AUMEKA от 1000₸ и корейская косметика в Астане. Те же ноты, что у люксовых брендов — честная цена. Заказ через WhatsApp.",
+    "Inspired парфюмерия AUMEKA от 4500₸ и корейская косметика в Астане. Акция 2+1 на все ароматы. Бесплатная доставка по Астане от 5000₸. Заказ через WhatsApp.",
 };
 
 export default function HomePage() {

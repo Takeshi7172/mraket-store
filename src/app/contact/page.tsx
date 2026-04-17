@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { WHATSAPP_URL } from "@/data/products";
 
 export const metadata: Metadata = {
-  title: "Контакты — MRAKET | Заказать в Астане",
+  title: "Контакты — SENSO | Заказать в Астане",
   description:
-    "Свяжитесь с MRAKET для заказа парфюмерии и косметики в Астане. WhatsApp, Telegram, Instagram. Оплата Kaspi QR.",
+    "Свяжитесь с SENSO для заказа парфюмерии и косметики в Астане. WhatsApp, Telegram, Instagram. Оплата Kaspi QR.",
 };
 
 interface ContactCard {
@@ -31,9 +31,9 @@ const CONTACTS: ContactCard[] = [
   },
   {
     platform: "Telegram",
-    handle: "@mraket_ttt",
+    handle: "@senso",
     description: "Каталог, новинки и акции. Подписывайтесь, чтобы не пропускать.",
-    href: "https://t.me/mraket_ttt",
+    href: "https://t.me/senso",
     cta: "Открыть Telegram",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden="true">
@@ -43,9 +43,9 @@ const CONTACTS: ContactCard[] = [
   },
   {
     platform: "Instagram",
-    handle: "@mraket.ttt",
+    handle: "@senso",
     description: "Фото продуктов, обзоры и история заказов наших клиентов.",
-    href: "https://instagram.com/mraket.ttt",
+    href: "https://instagram.com/senso",
     cta: "Перейти в Instagram",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden="true">
@@ -55,9 +55,9 @@ const CONTACTS: ContactCard[] = [
   },
   {
     platform: "Threads",
-    handle: "@mraket.ttt",
+    handle: "@senso",
     description: "Честные отзывы, сравнения и лайфстайл-контент об ароматах.",
-    href: "https://threads.net/@mraket.ttt",
+    href: "https://threads.net/@senso",
     cta: "Перейти в Threads",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden="true">

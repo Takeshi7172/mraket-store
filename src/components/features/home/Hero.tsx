@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { WHATSAPP_URL } from "@/data/products";
+import { WHATSAPP_URL, FREE_DELIVERY_TEXT, PROMO_2_PLUS_1 } from "@/data/products";
 
 export function Hero() {
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const sublineRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const blobRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const elements = [headlineRef.current, sublineRef.current, ctaRef.current];
@@ -24,12 +25,26 @@ export function Hero() {
     });
   }, []);
 
+  useEffect(() => {
+    const blob = blobRef.current;
+    if (!blob) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 40;
+      const y = (e.clientY / window.innerHeight - 0.5) * 40;
+      blob.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
     <section
       className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden"
       aria-label="Главный баннер"
     >
-      {/* Background gradient — dark luxury */}
+      {/* Background */}
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -38,25 +53,45 @@ export function Hero() {
         }}
       />
 
-      {/* Gold light bloom top-right */}
+      {/* Morphing golden blob */}
+      <div
+        ref={blobRef}
+        className="absolute z-0 pointer-events-none"
+        style={{
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "min(600px, 80vw)",
+          height: "min(600px, 80vw)",
+          transition: "transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+          background:
+            "radial-gradient(ellipse at 40% 40%, #C9A96E 0%, #b8864d 30%, #E8C4C4 60%, transparent 75%)",
+          filter: "blur(80px)",
+          opacity: 0.18,
+          animation: "blobMorph 10s ease-in-out infinite",
+          borderRadius: "60% 40% 70% 30% / 50% 60% 40% 70%",
+        }}
+      />
+
+      {/* Aurora accent — rose bottom left */}
+      <div
+        className="absolute bottom-0 left-0 w-2/3 h-2/3 z-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at 10% 90%, rgba(232,196,196,0.10) 0%, transparent 55%)",
+        }}
+      />
+
+      {/* Gold bloom top-right */}
       <div
         className="absolute top-0 right-0 w-1/2 h-1/2 z-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 80% 10%, rgba(201,169,110,0.12) 0%, transparent 60%)",
+            "radial-gradient(ellipse at 80% 10%, rgba(201,169,110,0.10) 0%, transparent 60%)",
         }}
       />
 
-      {/* Rose light bloom bottom-left */}
-      <div
-        className="absolute bottom-0 left-0 w-1/3 h-1/2 z-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at 20% 90%, rgba(232,196,196,0.08) 0%, transparent 60%)",
-        }}
-      />
-
-      {/* Subtle grain texture overlay */}
+      {/* Grain texture */}
       <div
         className="absolute inset-0 z-0 opacity-20 pointer-events-none"
         style={{
@@ -64,11 +99,22 @@ export function Hero() {
         }}
       />
 
+      {/* Blob keyframes injected via style tag */}
+      <style>{`
+        @keyframes blobMorph {
+          0%   { border-radius: 60% 40% 70% 30% / 50% 60% 40% 70%; }
+          25%  { border-radius: 40% 60% 30% 70% / 60% 40% 70% 50%; }
+          50%  { border-radius: 55% 45% 65% 35% / 45% 55% 35% 65%; }
+          75%  { border-radius: 35% 65% 45% 55% / 65% 35% 60% 40%; }
+          100% { border-radius: 60% 40% 70% 30% / 50% 60% 40% 70%; }
+        }
+      `}</style>
+
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl mx-auto">
         {/* Eyebrow */}
         <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase mb-8 opacity-0 animate-fade-in animate-delay-100">
-          AUMEKA — Inspired Collection
+          SENSO COLLECTION
         </p>
 
         {/* Main headline */}
@@ -77,28 +123,27 @@ export function Hero() {
           className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-[#F5F5F0] leading-none tracking-tight mb-6"
           style={{ opacity: 0 }}
         >
-          Аромат,
+          Почувствуй,
           <br />
-          <span className="text-[#C9A96E] italic">который</span>
-          <br />
-          запоминают
+          <span className="text-[#C9A96E] italic">это</span>{" "}
+          SENSO.
         </h1>
 
         {/* Subline */}
         <p
           ref={sublineRef}
-          className="text-[#F5F5F0]/60 text-lg sm:text-xl max-w-xl leading-relaxed mb-12"
+          className="text-[#F5F5F0]/60 text-lg sm:text-xl max-w-xl leading-relaxed mb-6"
           style={{ opacity: 0 }}
         >
-          Inspired парфюмерия и корейская косметика в Астане.
+          Парфюмерная коллекция для тех, кто выбирает аромат — не бренд.
           <br />
-          От <span className="text-[#C9A96E]">1 000 ₸</span> за флакон 60 мл.
+          От <span className="text-[#C9A96E]">4 500 ₸</span> за флакон.
         </p>
 
         {/* CTAs */}
         <div
           ref={ctaRef}
-          className="flex flex-col sm:flex-row gap-4 items-center"
+          className="flex flex-col sm:flex-row gap-4 items-center mb-8"
           style={{ opacity: 0 }}
         >
           <Link
@@ -118,6 +163,20 @@ export function Hero() {
             </svg>
             Заказать в WhatsApp
           </a>
+        </div>
+
+        {/* Delivery + promo pills */}
+        <div className="flex flex-col sm:flex-row items-center gap-3 text-xs">
+          <span className="flex items-center gap-1.5 text-[#F5F5F0]/50">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-3.5 h-3.5 flex-shrink-0 text-[#C9A96E]" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+            </svg>
+            {FREE_DELIVERY_TEXT}
+          </span>
+          <span className="hidden sm:block text-[#F5F5F0]/20">·</span>
+          <span className="inline-flex items-center gap-1 bg-[#C9A96E]/15 border border-[#C9A96E]/30 text-[#C9A96E] px-3 py-1 tracking-wider uppercase">
+            Акция {PROMO_2_PLUS_1.split("—")[0].trim()}
+          </span>
         </div>
       </div>
 

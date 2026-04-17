@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { WHATSAPP_URL } from "@/data/products";
+import { WHATSAPP_URL, FREE_DELIVERY_TEXT } from "@/data/products";
 
 interface SocialLink {
   label: string;
@@ -10,7 +10,7 @@ interface SocialLink {
 const SOCIAL_LINKS: SocialLink[] = [
   {
     label: "Instagram",
-    href: "https://instagram.com/mraket.ttt",
+    href: "https://instagram.com/senso",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
@@ -19,7 +19,7 @@ const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     label: "Telegram",
-    href: "https://t.me/mraket_ttt",
+    href: "https://t.me/senso",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
         <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.19 13.776l-2.969-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.967.783z" />
@@ -28,7 +28,7 @@ const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     label: "Threads",
-    href: "https://threads.net/@mraket.ttt",
+    href: "https://threads.net/@senso",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
         <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 1.848-.022 3.534-.501 4.787-1.335 1.326-.89 2.132-2.191 2.372-3.867H15.92c-.339 1.29-1.033 2.304-2.064 3.017-1.044.723-2.396 1.086-4.022 1.083l-.006-.001c-2.3-.014-4.055-.714-5.22-2.082-.986-1.154-1.512-2.766-1.569-4.767V11.98c.057-2.001.583-3.613 1.569-4.767 1.165-1.368 2.92-2.068 5.22-2.082l.006-.001c1.624-.003 2.977.36 4.022 1.082 1.032.714 1.726 1.728 2.065 3.017h2.079c-.24-1.676-1.046-2.977-2.372-3.867-1.253-.834-2.939-1.313-4.787-1.335-2.91.019-5.11.934-6.54 2.717-1.339 1.668-2.03 4.078-2.057 7.164.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.63 2.698 6.54 2.717h.007z" />
@@ -53,9 +53,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand column */}
           <div className="space-y-4">
-            <Link href="/" aria-label="MRAKET — на главную">
+            <Link href="/" aria-label="SENSO — на главную">
               <span className="font-heading text-2xl tracking-[0.3em] font-light text-[#F5F5F0]">
-                MRAKET
+                SENSO
               </span>
             </Link>
             <p className="text-sm leading-relaxed max-w-xs">
@@ -133,13 +133,17 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-[#F5F5F0]/30">
-            © {new Date().getFullYear()} MRAKET. Астана, Казахстан.
+            © {new Date().getFullYear()} SENSO. Астана, Казахстан.
           </p>
-          <div className="flex items-center gap-3 text-xs text-[#F5F5F0]/30">
-            <span>Оплата через</span>
-            <span className="text-[#F5F5F0]/60 font-medium tracking-wide">
-              Kaspi QR
-            </span>
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-xs text-[#F5F5F0]/30">
+            <span className="text-[#C9A96E]/60">{FREE_DELIVERY_TEXT}</span>
+            <span className="hidden sm:inline text-[#F5F5F0]/15">·</span>
+            <div className="flex items-center gap-1.5">
+              <span>Оплата через</span>
+              <span className="text-[#F5F5F0]/60 font-medium tracking-wide">
+                Kaspi QR
+              </span>
+            </div>
           </div>
         </div>
       </div>

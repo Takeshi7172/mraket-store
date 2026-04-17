@@ -7,8 +7,8 @@ interface StatItem {
 
 const STATS: StatItem[] = [
   { value: "8+", label: "ароматов в коллекции" },
-  { value: "1 000 ₸", label: "цена за 60 мл" },
-  { value: "Астана", label: "быстрая доставка" },
+  { value: "4 500 ₸", label: "цена за 60 мл" },
+  { value: "от 5 000 ₸", label: "бесплатная доставка" },
   { value: "Kaspi QR", label: "удобная оплата" },
 ];
 
@@ -21,15 +21,15 @@ export function BrandStatement() {
           <SectionReveal>
             <div className="space-y-6">
               <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase">
-                Почему MRAKET
+                Почему SENSO
               </p>
               <h2
                 id="brand-statement-heading"
                 className="font-heading text-4xl lg:text-5xl text-[#F5F5F0] leading-tight"
               >
-                Те же ноты.
+                Твои чувства.
                 <br />
-                <span className="text-[#C9A96E] italic">Честная цена.</span>
+                <span className="text-[#C9A96E] italic">Твой аромат.</span>
               </h2>
               <p className="text-[#F5F5F0]/60 text-lg leading-relaxed max-w-md">
                 Мы не копируем — мы вдохновляемся. Наши ароматы AUMEKA создаются
@@ -37,7 +37,7 @@ export function BrandStatement() {
                 Разница только в цене.
               </p>
               <p className="text-[#F5F5F0]/60 leading-relaxed max-w-md">
-                Флакон 60 мл за <span className="text-[#C9A96E]">1 000 ₸</span> вместо
+                Флакон 60 мл за <span className="text-[#C9A96E]">4 500 ₸</span> вместо
                 20 000–80 000 ₸ за оригинал. Те же эмоции — без переплаты за бренд.
               </p>
               <div className="pt-2">

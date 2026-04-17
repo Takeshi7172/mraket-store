@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/data/products";
-import { getRelatedProducts, getWhatsAppOrderUrl } from "@/data/products";
+import { getRelatedProducts, getWhatsAppOrderUrl, FREE_DELIVERY_TEXT, PROMO_2_PLUS_1 } from "@/data/products";
 import { NotePyramid } from "@/components/features/product/NotePyramid";
 import { ProductCard } from "@/components/features/catalog/ProductCard";
 
@@ -68,7 +68,23 @@ export function ProductDetail({ product }: ProductDetailProps) {
                 {product.price.toLocaleString("ru-KZ")} ₸
               </span>
               <span className="text-[#0A0A0A]/40 text-sm">{product.volume}</span>
+              {product.category === "perfume" && (
+                <span className="ml-auto bg-[#C9A96E] text-[#0A0A0A] text-[10px] tracking-widest font-semibold uppercase px-2.5 py-1">
+                  Акция 2+1
+                </span>
+              )}
             </div>
+
+            {/* Promo info — perfumes only */}
+            {product.category === "perfume" && (
+              <div className="flex items-start gap-3 border border-[#C9A96E]/20 p-4 text-sm" style={{ backgroundColor: "rgba(201,169,110,0.06)" }}>
+                <span className="text-[#C9A96E] mt-0.5 flex-shrink-0" aria-hidden="true">◆</span>
+                <p className="text-[#0A0A0A]/70 leading-snug">
+                  <span className="text-[#0A0A0A] font-medium">Акция:</span>{" "}
+                  {PROMO_2_PLUS_1}
+                </p>
+              </div>
+            )}
 
             {/* Description */}
             <p className="text-[#0A0A0A]/70 leading-relaxed">{product.description}</p>
@@ -102,11 +118,13 @@ export function ProductDetail({ product }: ProductDetailProps) {
             </div>
 
             {/* Delivery note */}
-            <div className="flex items-center gap-3 text-sm text-[#0A0A0A]/40 border-t border-[#0A0A0A]/10 pt-6">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4 flex-shrink-0">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
-              </svg>
-              <span>Доставка по Астане · Оплата Kaspi QR</span>
+            <div className="flex flex-col gap-2 border-t border-[#0A0A0A]/10 pt-6">
+              <div className="flex items-center gap-3 text-sm text-[#0A0A0A]/40">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4 flex-shrink-0" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                </svg>
+                <span>{FREE_DELIVERY_TEXT} · Оплата Kaspi QR</span>
+              </div>
             </div>
           </div>
         </div>

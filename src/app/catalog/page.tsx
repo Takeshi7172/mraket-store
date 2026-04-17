@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ProductGrid } from "@/components/features/catalog/ProductGrid";
 
 export const metadata: Metadata = {
-  title: "Каталог — MRAKET | Парфюмерия и косметика в Астане",
+  title: "Каталог — SENSO | Парфюмерия и косметика в Астане",
   description:
-    "Весь каталог MRAKET: inspired парфюмерия AUMEKA от 1000₸, K-beauty косметика и подарочные наборы. Доставка по Астане. Заказ через WhatsApp.",
+    "Весь каталог SENSO: inspired парфюмерия AUMEKA от 1000₸, K-beauty косметика и подарочные наборы. Доставка по Астане. Заказ через WhatsApp.",
 };
 
 export default function CatalogPage() {

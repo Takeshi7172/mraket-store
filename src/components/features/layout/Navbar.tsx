@@ -46,10 +46,10 @@ export function Navbar() {
           <Link
             href="/"
             className="flex-shrink-0"
-            aria-label="MRAKET — на главную"
+            aria-label="SENSO — на главную"
           >
             <span className="font-heading text-xl lg:text-2xl tracking-[0.3em] font-light text-[#F5F5F0]">
-              MRAKET
+              SENSO
             </span>
           </Link>
 

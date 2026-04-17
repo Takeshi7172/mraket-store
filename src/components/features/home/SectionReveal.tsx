@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface SectionRevealProps {
@@ -11,8 +11,11 @@ interface SectionRevealProps {
 
 export function SectionReveal({ children, delay = 0, className }: SectionRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+
     const el = ref.current;
     if (!el) return;
 
@@ -35,7 +38,10 @@ export function SectionReveal({ children, delay = 0, className }: SectionRevealP
   }, [delay]);
 
   return (
-    <div ref={ref} className={cn("reveal", className)}>
+    <div
+      ref={ref}
+      className={cn(mounted ? "reveal" : "", className)}
+    >
       {children}
     </div>
   );

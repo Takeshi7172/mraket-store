@@ -3,9 +3,9 @@ import Link from "next/link";
 import { WHATSAPP_URL } from "@/data/products";
 
 export const metadata: Metadata = {
-  title: "О нас — MRAKET | История бренда",
+  title: "О нас — SENSO | История бренда",
   description:
-    "MRAKET — это inspired парфюмерия и корейская косметика в Астане. Узнайте нашу историю: почему мы верим, что роскошный аромат не должен стоить целую зарплату.",
+    "SENSO — это inspired парфюмерия и корейская косметика в Астане. Узнайте нашу историю: почему мы верим, что роскошный аромат не должен стоить целую зарплату.",
 };
 
 export default function AboutPage() {
@@ -32,7 +32,7 @@ export default function AboutPage() {
             </span>
           </h1>
           <p className="text-[#F5F5F0]/60 text-lg max-w-2xl leading-relaxed">
-            Мы основали MRAKET с одной идеей: люди в Астане заслуживают
+            Мы основали SENSO с одной идеей: люди в Астане заслуживают
             те же ощущения от аромата, что и покупатели в парижских бутиках.
             Без лишней переплаты.
           </p>
@@ -72,7 +72,7 @@ export default function AboutPage() {
               <br />Честная цена.&rdquo;
             </blockquote>
             <p className="text-[#F5F5F0]/50 text-sm">
-              — MRAKET, Астана
+              — SENSO, Астана
             </p>
           </div>
         </section>
