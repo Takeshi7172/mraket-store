@@ -70,7 +70,7 @@ export function HowToOrder() {
               >
                 {/* Number */}
                 <div
-                  className="relative w-16 h-16 flex items-center justify-center mb-8 z-10"
+                  className="relative w-16 h-16 flex items-center justify-center mb-8 z-10 rounded-full"
                   style={{
                     background: "#0A0A0A",
                     border: "1px solid rgba(201,169,110,0.3)",

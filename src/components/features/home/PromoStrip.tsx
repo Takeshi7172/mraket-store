@@ -10,10 +10,11 @@ export function PromoStrip() {
     >
       <div className="max-w-3xl mx-auto text-center">
         <div
-          className="inline-block px-10 py-12"
+          className="inline-block px-10 py-12 rounded-2xl"
           style={{
             background: "#0E0E0E",
             border: "1px solid rgba(201,169,110,0.15)",
+            boxShadow: "0 4px 24px rgba(201,169,110,0.08)",
           }}
         >
           <p className="text-[#C9A96E] text-[9px] tracking-[0.5em] uppercase mb-4">
@@ -30,7 +31,7 @@ export function PromoStrip() {
           </p>
           <Link
             href="/catalog"
-            className="inline-flex items-center gap-2 bg-[#C9A96E] text-[#1A1A1A] px-8 py-3.5 text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#B8944F] transition-colors duration-300"
+            className="inline-flex items-center gap-2 bg-[#C9A96E] text-[#1A1A1A] px-8 py-3.5 text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#B8944F] transition-colors duration-300 rounded-full"
           >
             Выбрать ароматы
           </Link>

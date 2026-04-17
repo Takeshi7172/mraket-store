@@ -20,7 +20,7 @@ export function StorySection() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="relative aspect-[4/5] overflow-hidden">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
               <Image
                 src="/products/photo_10.jpg"
                 alt="SENZA аромат"

@@ -44,7 +44,7 @@ export function FinalCTA() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#C9A96E] text-[#1A1A1A] px-10 py-4 text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#B8944F] transition-colors duration-300"
+            className="inline-flex items-center gap-3 bg-[#C9A96E] text-[#1A1A1A] px-10 py-4 text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#B8944F] transition-colors duration-300 rounded-full"
           >
             {WHATSAPP_ICON}
             Написать в WhatsApp
@@ -52,7 +52,7 @@ export function FinalCTA() {
 
           <Link
             href="/catalog"
-            className="inline-flex items-center gap-2 border border-[#F5F5F0]/15 text-[#F5F5F0]/50 px-10 py-4 text-xs tracking-[0.3em] uppercase hover:border-[#C9A96E]/50 hover:text-[#C9A96E] transition-all duration-300"
+            className="inline-flex items-center gap-2 border border-[#F5F5F0]/15 text-[#F5F5F0]/50 px-10 py-4 text-xs tracking-[0.3em] uppercase hover:border-[#C9A96E]/50 hover:text-[#C9A96E] transition-all duration-300 rounded-full"
           >
             Весь каталог
           </Link>

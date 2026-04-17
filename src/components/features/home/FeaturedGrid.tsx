@@ -42,8 +42,8 @@ export function FeaturedGrid() {
             >
               {/* Image */}
               <div
-                className="relative aspect-[3/4] bg-white overflow-hidden mb-4 hover:scale-[1.02] transition-transform duration-300"
-                style={{ boxShadow: "0 2px 20px rgba(0,0,0,0.06)" }}
+                className="relative aspect-[3/4] bg-white overflow-hidden mb-4 hover:scale-[1.02] transition-transform duration-300 rounded-xl"
+                style={{ boxShadow: "0 4px 24px rgba(201,169,110,0.08)" }}
               >
                 <Image
                   src={product.image}
@@ -56,7 +56,7 @@ export function FeaturedGrid() {
                 {/* 2+1 badge */}
                 {product.category === "perfume" && (
                   <div className="absolute top-3 right-3 z-10">
-                    <span className="bg-[#C9A96E] text-[#1A1A1A] text-[9px] tracking-widest font-semibold uppercase px-2.5 py-1">
+                    <span className="bg-[#C9A96E] text-[#1A1A1A] text-[9px] tracking-widest font-semibold uppercase px-2.5 py-1 rounded-full">
                       2+1
                     </span>
                   </div>

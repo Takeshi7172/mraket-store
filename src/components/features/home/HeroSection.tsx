@@ -45,7 +45,7 @@ export function HeroSection() {
         {/* CTA */}
         <Link
           href="/catalog"
-          className="inline-flex items-center gap-2 bg-[#C9A96E] text-[#1A1A1A] px-10 py-4 text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#B8944F] transition-colors duration-300"
+          className="inline-flex items-center gap-2 bg-[#C9A96E] text-[#1A1A1A] px-10 py-4 text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#B8944F] transition-colors duration-300 rounded-full"
         >
           Смотреть коллекцию
         </Link>

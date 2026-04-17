@@ -30,11 +30,11 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
       >
         {/* Image */}
         <motion.div
-          className="relative aspect-[3/4] bg-white overflow-hidden mb-5"
+          className="relative aspect-[3/4] bg-white overflow-hidden mb-5 rounded-xl"
           whileHover={{ y: -4 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
           style={{
-            boxShadow: "0 2px 20px rgba(0,0,0,0.06)",
+            boxShadow: "0 4px 24px rgba(201,169,110,0.08)",
           }}
         >
           <Image
@@ -47,7 +47,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
 
           {/* Category tag */}
           <div className="absolute top-3 left-3 z-10">
-            <span className="bg-[#0A0A0A]/70 text-[#F5F5F0] text-[9px] tracking-widest uppercase px-2.5 py-1">
+            <span className="bg-[#0A0A0A]/70 text-[#F5F5F0] text-[9px] tracking-widest uppercase px-3 py-1 rounded-full">
               {CATEGORY_LABELS[product.category]}
             </span>
           </div>
@@ -55,7 +55,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           {/* 2+1 promo badge */}
           {product.category === "perfume" && (
             <div className="absolute top-3 right-3 z-10">
-              <span className="bg-[#C9A96E] text-[#0A0A0A] text-[9px] tracking-widest font-semibold uppercase px-2.5 py-1">
+              <span className="bg-[#C9A96E] text-[#0A0A0A] text-[9px] tracking-widest font-semibold uppercase px-2.5 py-1 rounded-full">
                 2+1
               </span>
             </div>

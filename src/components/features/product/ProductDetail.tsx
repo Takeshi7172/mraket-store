@@ -44,9 +44,9 @@ export function ProductDetail({ product }: ProductDetailProps) {
           {/* Image — sticky on desktop */}
           <div className="lg:sticky lg:top-28">
             <div
-              className="relative aspect-[4/5] bg-white overflow-hidden"
+              className="relative aspect-[4/5] bg-white overflow-hidden rounded-xl"
               style={{
-                boxShadow: "0 8px 60px rgba(0,0,0,0.10)",
+                boxShadow: "0 4px 24px rgba(201,169,110,0.08)",
               }}
             >
               <Image
@@ -60,7 +60,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
               {/* Perfume promo badge */}
               {product.category === "perfume" && (
                 <div className="absolute top-5 right-5">
-                  <span className="bg-[#C9A96E] text-[#0A0A0A] text-xs tracking-widest font-semibold uppercase px-3 py-1.5">
+                  <span className="bg-[#C9A96E] text-[#0A0A0A] text-xs tracking-widest font-semibold uppercase px-3 py-1.5 rounded-full">
                     Акция 2+1
                   </span>
                 </div>
@@ -135,7 +135,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                 href={orderUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 bg-[#C9A96E] text-[#0A0A0A] px-8 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#e0c080] transition-colors duration-300"
+                className="inline-flex items-center justify-center gap-3 bg-[#C9A96E] text-[#0A0A0A] px-8 py-4 text-sm tracking-widest uppercase font-medium hover:bg-[#e0c080] transition-colors duration-300 rounded-full"
               >
                 <svg
                   viewBox="0 0 24 24"
