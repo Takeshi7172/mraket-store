@@ -1,37 +1,71 @@
 import Link from "next/link";
-import { WHATSAPP_URL } from "@/data/products";
+import { WHATSAPP_URL, PROMO_2_PLUS_1, FREE_DELIVERY_TEXT } from "@/data/products";
 import { SectionReveal } from "@/components/features/home/SectionReveal";
 
 export function HomeCTA() {
   return (
     <section
-      className="py-24 lg:py-32 relative overflow-hidden"
+      className="py-28 lg:py-44 relative overflow-hidden"
       style={{
         background:
-          "linear-gradient(135deg, #0A0A0A 0%, #1a1208 50%, #0A0A0A 100%)",
+          "linear-gradient(145deg, #0A0A0A 0%, #1a1208 40%, #160f05 70%, #0A0A0A 100%)",
       }}
       aria-labelledby="home-cta-heading"
     >
-      {/* Gold accent line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A96E]/40 to-transparent" />
+      {/* Gold accent line top */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A96E]/50 to-transparent" />
 
-      <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      {/* Bloom accents */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(201,169,110,0.07) 0%, transparent 65%)",
+        }}
+      />
+
+      {/* Grain */}
+      <div
+        className="absolute inset-0 opacity-15 pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E")`,
+        }}
+      />
+
+      <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
         <SectionReveal>
-          <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase mb-6">
+          <p className="text-[#C9A96E] text-[10px] tracking-[0.5em] uppercase mb-8">
             Первый заказ — сегодня
           </p>
           <h2
             id="home-cta-heading"
-            className="font-heading text-4xl lg:text-5xl xl:text-6xl text-[#F5F5F0] leading-tight mb-6"
+            className="font-heading text-5xl lg:text-7xl xl:text-8xl text-[#F5F5F0] leading-tight mb-8"
           >
             Твои чувства,
             <br />
             <span className="text-[#C9A96E] italic">твой аромат</span>
           </h2>
-          <p className="text-[#F5F5F0]/60 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
+          <p className="text-[#F5F5F0]/50 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
             Не знаете, что выбрать? Напишите нам в WhatsApp — поможем подобрать
             аромат под ваш характер и настроение.
           </p>
+
+          {/* Promo card */}
+          <div
+            className="inline-flex items-center gap-3 px-6 py-4 mb-12 text-sm"
+            style={{
+              background: "rgba(201,169,110,0.08)",
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
+              border: "1px solid rgba(201,169,110,0.2)",
+            }}
+          >
+            <span className="text-[#C9A96E]" aria-hidden="true">◆</span>
+            <span className="text-[#F5F5F0]/70">
+              <span className="text-[#C9A96E] font-medium">Акция:</span>{" "}
+              {PROMO_2_PLUS_1}
+            </span>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -47,16 +81,27 @@ export function HomeCTA() {
             </a>
             <Link
               href="/catalog"
-              className="inline-flex items-center justify-center gap-2 border border-[#F5F5F0]/20 text-[#F5F5F0] px-10 py-4 text-sm tracking-widest uppercase hover:border-[#C9A96E] hover:text-[#C9A96E] transition-colors duration-300"
+              className="inline-flex items-center justify-center gap-2 text-[#F5F5F0]/60 px-10 py-4 text-sm tracking-widest uppercase hover:text-[#C9A96E] transition-colors duration-300"
+              style={{
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.1)",
+              }}
             >
               Весь каталог
             </Link>
           </div>
+
+          {/* Delivery note */}
+          <p className="text-[#F5F5F0]/25 text-xs tracking-widest uppercase mt-10">
+            {FREE_DELIVERY_TEXT} · Kaspi QR
+          </p>
         </SectionReveal>
       </div>
 
-      {/* Bottom accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A96E]/40 to-transparent" />
+      {/* Gold accent line bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A96E]/50 to-transparent" />
     </section>
   );
 }

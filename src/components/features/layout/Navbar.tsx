@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { WHATSAPP_URL } from "@/data/products";
 
@@ -31,129 +32,185 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close menu on route change
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
   const solidBg = !isHome || scrolled;
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        solidBg ? "bg-[#0A0A0A] shadow-lg" : "bg-transparent"
-      )}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="flex-shrink-0"
-            aria-label="SENSO — на главную"
-          >
-            <span className="font-heading text-xl lg:text-2xl tracking-[0.3em] font-light text-[#F5F5F0]">
-              SENSO
-            </span>
-          </Link>
+    <>
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          solidBg
+            ? "bg-[#0A0A0A] shadow-lg"
+            : "bg-transparent"
+        )}
+        style={
+          solidBg
+            ? {
+                borderBottom: "1px solid rgba(201,169,110,0.15)",
+              }
+            : undefined
+        }
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 lg:h-20">
+            {/* Logo */}
+            <Link
+              href="/"
+              className="flex-shrink-0 group"
+              aria-label="SENSO — на главную"
+            >
+              <span className="font-heading text-2xl lg:text-3xl tracking-[0.35em] font-light text-[#F5F5F0] group-hover:text-[#C9A96E] transition-colors duration-300">
+                SENSO
+              </span>
+            </Link>
 
-          {/* Desktop nav */}
-          <nav
-            className="hidden md:flex items-center gap-8"
-            aria-label="Основная навигация"
-          >
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "text-sm tracking-widest uppercase transition-colors duration-200",
-                  pathname === link.href
-                    ? "text-[#C9A96E]"
-                    : "text-[#F5F5F0]/70 hover:text-[#C9A96E]"
-                )}
+            {/* Desktop nav */}
+            <nav
+              className="hidden md:flex items-center gap-10"
+              aria-label="Основная навигация"
+            >
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    "nav-link-hover text-sm tracking-widest uppercase transition-colors duration-200 pb-0.5",
+                    pathname === link.href
+                      ? "text-[#C9A96E]"
+                      : "text-[#F5F5F0]/70 hover:text-[#C9A96E]"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Right side */}
+            <div className="flex items-center gap-5">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Написать в WhatsApp"
+                className="hidden md:flex items-center gap-2 text-[#F5F5F0]/70 hover:text-[#25D366] transition-colors duration-200"
               >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+                <WhatsAppIcon className="w-5 h-5" />
+              </a>
 
-          {/* Right side */}
-          <div className="flex items-center gap-4">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Написать в WhatsApp"
-              className="hidden md:flex items-center gap-2 text-[#F5F5F0]/70 hover:text-[#25D366] transition-colors duration-200"
-            >
-              <WhatsAppIcon className="w-5 h-5" />
-            </a>
-
-            {/* Mobile hamburger */}
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden flex flex-col gap-1.5 p-1"
-              aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
-              aria-expanded={menuOpen}
-            >
-              <span
-                className={cn(
-                  "block w-6 h-px bg-[#F5F5F0] transition-all duration-300",
-                  menuOpen && "rotate-45 translate-y-2"
-                )}
-              />
-              <span
-                className={cn(
-                  "block w-6 h-px bg-[#F5F5F0] transition-all duration-300",
-                  menuOpen && "opacity-0"
-                )}
-              />
-              <span
-                className={cn(
-                  "block w-6 h-px bg-[#F5F5F0] transition-all duration-300",
-                  menuOpen && "-rotate-45 -translate-y-2"
-                )}
-              />
-            </button>
+              {/* Mobile hamburger */}
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="md:hidden flex flex-col gap-1.5 p-1 relative z-[60]"
+                aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
+                aria-expanded={menuOpen}
+              >
+                <span
+                  className={cn(
+                    "block w-6 h-px transition-all duration-300",
+                    menuOpen ? "rotate-45 translate-y-[7px] bg-[#C9A96E]" : "bg-[#F5F5F0]"
+                  )}
+                />
+                <span
+                  className={cn(
+                    "block w-6 h-px transition-all duration-300",
+                    menuOpen ? "opacity-0 bg-[#C9A96E]" : "bg-[#F5F5F0]"
+                  )}
+                />
+                <span
+                  className={cn(
+                    "block w-6 h-px transition-all duration-300",
+                    menuOpen ? "-rotate-45 -translate-y-[7px] bg-[#C9A96E]" : "bg-[#F5F5F0]"
+                  )}
+                />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile menu */}
-      <div
-        className={cn(
-          "md:hidden bg-[#0A0A0A] overflow-hidden transition-all duration-300",
-          menuOpen ? "max-h-64 border-t border-white/10" : "max-h-0"
-        )}
-      >
-        <nav
-          className="px-6 py-4 flex flex-col gap-4"
-          aria-label="Мобильное меню"
-        >
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className={cn(
-                "text-sm tracking-widest uppercase py-2 transition-colors",
-                pathname === link.href
-                  ? "text-[#C9A96E]"
-                  : "text-[#F5F5F0]/70"
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-[#F5F5F0]/70 py-2"
+      {/* Full-screen mobile menu overlay */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-[#0A0A0A] flex flex-col items-center justify-center"
           >
-            <WhatsAppIcon className="w-4 h-4" />
-            <span className="tracking-widest uppercase">WhatsApp</span>
-          </a>
-        </nav>
-      </div>
-    </header>
+            {/* Subtle gold blob in background */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(201,169,110,0.06) 0%, transparent 70%)",
+              }}
+            />
+
+            <nav
+              className="relative z-10 flex flex-col items-center gap-8"
+              aria-label="Мобильное меню"
+            >
+              {NAV_LINKS.map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.08, duration: 0.5 }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={cn(
+                      "font-heading text-4xl sm:text-5xl tracking-wide transition-colors duration-200",
+                      pathname === link.href
+                        ? "text-[#C9A96E]"
+                        : "text-[#F5F5F0]/80 hover:text-[#C9A96E]"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                className="pt-4"
+              >
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-[#F5F5F0]/50 hover:text-[#25D366] transition-colors"
+                >
+                  <WhatsAppIcon className="w-5 h-5" />
+                  <span className="text-sm tracking-widest uppercase">WhatsApp</span>
+                </a>
+              </motion.div>
+            </nav>
+
+            {/* Bottom brand mark */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="absolute bottom-10 left-0 right-0 text-center"
+            >
+              <span className="text-[#F5F5F0]/15 text-xs tracking-[0.4em] uppercase">
+                Почувствуй, это SENSO
+              </span>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 

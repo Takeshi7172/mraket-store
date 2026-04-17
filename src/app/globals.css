@@ -104,6 +104,27 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C9A96E;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e0c080;
+  }
+
+  /* Selection color */
+  ::selection {
+    background: rgba(201, 169, 110, 0.25);
+    color: #0A0A0A;
+  }
 }
 
 /* Fade-in animation for scroll reveal */
@@ -128,6 +149,18 @@
   100% { transform: scale(1.6); opacity: 0; }
 }
 
+@keyframes float-dot {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
+  25% { transform: translateY(-12px) translateX(6px); opacity: 0.7; }
+  50% { transform: translateY(-6px) translateX(-4px); opacity: 0.5; }
+  75% { transform: translateY(-16px) translateX(8px); opacity: 0.6; }
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease forwards;
 }
@@ -141,6 +174,10 @@
 .animate-delay-300 { animation-delay: 300ms; }
 .animate-delay-400 { animation-delay: 400ms; }
 .animate-delay-500 { animation-delay: 500ms; }
+
+.animate-scroll-bounce {
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
 
 /* WhatsApp pulse */
 .whatsapp-pulse::before {
@@ -178,6 +215,24 @@
   background: #C9A96E;
 }
 
+/* Nav hover underline slide-in */
+.nav-link-hover {
+  position: relative;
+}
+.nav-link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #C9A96E;
+  transition: width 0.3s ease;
+}
+.nav-link-hover:hover::after {
+  width: 100%;
+}
+
 /* Section reveal — initial hidden state */
 .reveal {
   opacity: 0;
@@ -188,4 +243,39 @@
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Glass morphism */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-dark {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Floating dots for hero */
+.hero-dot {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #C9A96E;
+  pointer-events: none;
+}
+
+/* Filter pill active indicator */
+.filter-pill-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: #C9A96E;
+  transition: all 0.3s ease;
 }

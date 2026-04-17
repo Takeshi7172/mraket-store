@@ -71,80 +71,120 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#F5F5F0] pt-20">
       {/* Header */}
-      <div className="bg-[#0A0A0A] pt-12 pb-20 relative overflow-hidden">
+      <div
+        className="relative pt-16 pb-24 overflow-hidden"
+        style={{ background: "#0A0A0A" }}
+      >
         <div
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse at 30% 60%, rgba(201,169,110,0.6) 0%, transparent 55%)",
+              "radial-gradient(ellipse at 30% 60%, rgba(201,169,110,0.10) 0%, transparent 55%)",
           }}
         />
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
-          <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase mb-4">
+        <div
+          className="absolute inset-0 opacity-15 pointer-events-none"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E")`,
+          }}
+        />
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
+          <p className="text-[#C9A96E] text-[10px] tracking-[0.5em] uppercase mb-4">
             Связаться с нами
           </p>
-          <h1 className="font-heading text-4xl lg:text-6xl text-[#F5F5F0] leading-tight">
+          <h1 className="font-heading text-5xl lg:text-7xl text-[#F5F5F0] leading-none mb-4">
             Контакты
           </h1>
+          <p className="text-[#F5F5F0]/40 text-lg max-w-md leading-relaxed">
+            Мы в WhatsApp — отвечаем быстро и помогаем с выбором
+          </p>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A96E]/20 to-transparent" />
       </div>
 
       <div className="max-w-5xl mx-auto px-6 lg:px-8 py-24">
-        {/* Intro */}
-        <div className="text-center mb-16">
-          <h2 className="font-heading text-3xl text-[#0A0A0A] mb-4">
-            Как сделать заказ?
-          </h2>
-          <p className="text-[#0A0A0A]/60 max-w-xl mx-auto leading-relaxed">
-            Всё просто: выбираете нужный продукт в каталоге, пишете нам в WhatsApp,
-            называете позицию — мы подтверждаем наличие и присылаем Kaspi QR для оплаты.
-          </p>
-        </div>
+        {/* Steps — visual timeline */}
+        <div className="mb-24">
+          <div className="space-y-3 mb-14">
+            <p className="text-[#C9A96E] text-[10px] tracking-[0.5em] uppercase">
+              Как сделать заказ
+            </p>
+            <h2 className="font-heading text-4xl lg:text-5xl text-[#0A0A0A]">
+              Три шага
+            </h2>
+          </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-20">
-          {[
-            { step: "01", title: "Выберите", desc: "Найдите нужное в каталоге" },
-            { step: "02", title: "Напишите", desc: "Сообщите название в WhatsApp" },
-            { step: "03", title: "Оплатите", desc: "Kaspi QR — удобно и быстро" },
-          ].map((s) => (
-            <div key={s.step} className="flex gap-5 items-start">
-              <span className="font-heading text-3xl text-[#C9A96E] leading-none">
-                {s.step}
-              </span>
-              <div>
-                <h3 className="font-medium text-[#0A0A0A] mb-1">{s.title}</h3>
-                <p className="text-[#0A0A0A]/50 text-sm">{s.desc}</p>
-              </div>
+          <div className="relative">
+            {/* Connecting line */}
+            <div
+              className="absolute top-6 left-8 right-8 h-px hidden sm:block"
+              style={{
+                background:
+                  "linear-gradient(to right, #C9A96E, rgba(201,169,110,0.3), #C9A96E)",
+              }}
+            />
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+              {[
+                { step: "01", title: "Выберите", desc: "Найдите нужное в каталоге" },
+                { step: "02", title: "Напишите", desc: "Сообщите название в WhatsApp" },
+                { step: "03", title: "Оплатите", desc: "Kaspi QR — удобно и быстро" },
+              ].map((s, i) => (
+                <div key={s.step} className="flex flex-col items-start sm:items-center sm:text-center gap-4">
+                  <div
+                    className="relative z-10 w-12 h-12 flex items-center justify-center flex-shrink-0"
+                    style={{
+                      background: i === 1 ? "#C9A96E" : "#0A0A0A",
+                      border: "1px solid rgba(201,169,110,0.3)",
+                    }}
+                  >
+                    <span
+                      className="font-heading text-lg leading-none"
+                      style={{ color: i === 1 ? "#0A0A0A" : "#C9A96E" }}
+                    >
+                      {s.step}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-xl text-[#0A0A0A] mb-1">{s.title}</h3>
+                    <p className="text-[#0A0A0A]/50 text-sm">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
-        {/* Contact cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+        {/* Contact cards with glassmorphism */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-24">
           {CONTACTS.map((contact) => (
             <a
               key={contact.platform}
               href={contact.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group border border-[#0A0A0A]/10 p-8 space-y-4 hover:border-[#C9A96E]/50 hover:bg-white transition-all duration-300"
+              className="group p-8 space-y-5 transition-all duration-300 hover:-translate-y-1"
+              style={{
+                background: "#ffffff",
+                border: "1px solid rgba(10,10,10,0.07)",
+                boxShadow: "0 2px 20px rgba(0,0,0,0.04)",
+              }}
             >
               <div className="flex items-center gap-4">
-                <div className="text-[#0A0A0A]/60 group-hover:text-[#C9A96E] transition-colors">
+                <div className="text-[#0A0A0A]/40 group-hover:text-[#C9A96E] transition-colors duration-200">
                   {contact.icon}
                 </div>
                 <div>
-                  <p className="text-xs tracking-widest uppercase text-[#C9A96E]">
+                  <p className="text-[10px] tracking-[0.4em] uppercase text-[#C9A96E]">
                     {contact.platform}
                   </p>
-                  <p className="font-medium text-[#0A0A0A]">{contact.handle}</p>
+                  <p className="font-medium text-[#0A0A0A] text-sm">{contact.handle}</p>
                 </div>
               </div>
-              <p className="text-[#0A0A0A]/60 text-sm leading-relaxed">
+              <p className="text-[#0A0A0A]/55 text-sm leading-relaxed">
                 {contact.description}
               </p>
-              <span className="inline-flex items-center gap-2 text-sm text-[#0A0A0A]/40 group-hover:text-[#C9A96E] transition-colors">
+              <span className="inline-flex items-center gap-2 text-xs text-[#0A0A0A]/35 group-hover:text-[#C9A96E] transition-colors tracking-widest uppercase">
                 {contact.cta}
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </span>
@@ -153,37 +193,53 @@ export default function ContactPage() {
         </div>
 
         {/* Location + payment */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-[#0A0A0A] p-8 space-y-4">
-            <p className="text-[#C9A96E] text-xs tracking-widest uppercase">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            className="p-8 space-y-5"
+            style={{
+              background: "#0A0A0A",
+              border: "1px solid rgba(201,169,110,0.12)",
+            }}
+          >
+            <p className="text-[#C9A96E] text-[10px] tracking-[0.5em] uppercase">
               Местоположение
             </p>
-            <div className="space-y-2">
-              <p className="font-heading text-2xl text-[#F5F5F0]">Астана</p>
-              <p className="text-[#F5F5F0]/50 text-sm">
-                Казахстан
-              </p>
+            <div className="space-y-1">
+              <p className="font-heading text-3xl text-[#F5F5F0]">Астана</p>
+              <p className="text-[#F5F5F0]/35 text-sm">Казахстан</p>
             </div>
-            <p className="text-[#F5F5F0]/50 text-sm leading-relaxed">
+            <div className="w-8 h-px bg-[#C9A96E]/40" />
+            <p className="text-[#F5F5F0]/45 text-sm leading-relaxed">
               Работаем по всей Астане. Самовывоз и доставка — уточняйте
               при заказе.
             </p>
           </div>
 
-          <div className="border border-[#0A0A0A]/10 p-8 space-y-4">
-            <p className="text-[#C9A96E] text-xs tracking-widest uppercase">
+          <div
+            className="p-8 space-y-5"
+            style={{
+              background: "#ffffff",
+              border: "1px solid rgba(10,10,10,0.07)",
+              boxShadow: "0 2px 20px rgba(0,0,0,0.04)",
+            }}
+          >
+            <p className="text-[#C9A96E] text-[10px] tracking-[0.5em] uppercase">
               Оплата
             </p>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-[#F14635] rounded-lg flex items-center justify-center">
+              <div
+                className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+                style={{ background: "#F14635" }}
+              >
                 <span className="text-white text-xs font-bold tracking-tight">KASPI</span>
               </div>
               <div>
                 <p className="font-medium text-[#0A0A0A]">Kaspi QR</p>
-                <p className="text-[#0A0A0A]/50 text-sm">Мгновенная оплата</p>
+                <p className="text-[#0A0A0A]/40 text-sm">Мгновенная оплата</p>
               </div>
             </div>
-            <p className="text-[#0A0A0A]/60 text-sm leading-relaxed">
+            <div className="w-8 h-px bg-[#C9A96E]/40" />
+            <p className="text-[#0A0A0A]/55 text-sm leading-relaxed">
               Принимаем оплату через Kaspi QR. Никаких предоплат наличными —
               только безопасная оплата через приложение.
             </p>

@@ -42,7 +42,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="ru"
-      className={`${inter.variable} ${playfair.variable} h-full`}
+      className={`${inter.variable} ${playfair.variable} h-full scroll-smooth`}
     >
       <body className="min-h-full flex flex-col antialiased">
         <NavbarWrapper />
