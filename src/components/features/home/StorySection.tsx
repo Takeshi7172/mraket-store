@@ -45,18 +45,19 @@ export function StorySection() {
             </p>
 
             <h2 className="font-heading text-[clamp(2.2rem,5vw,3.5rem)] text-[#F5F5F0] leading-tight mb-8">
-              Мы не копируем —<br />
-              <em className="text-[#C9A96E]">мы вдохновляемся</em>
+              Каждый аромат в коллекции —<br />
+              <em className="text-[#C9A96E]">это история</em>
             </h2>
 
             <p className="text-[#F5F5F0]/50 text-base leading-relaxed mb-6 max-w-md">
-              Те же семейства нот, те же парфюмерные дома-вдохновители. Та же
-              чувственность — без накрутки за бренд. Мы создаём ароматы,
-              которые живут на вашей коже, а не в рекламных бюджетах.
+              Мы — парфюмерные кураторы. Изучаем семейства нот, тестируем
+              стойкость, подбираем ароматы, которые раскрывают характер.
+              В коллекции — только то, что прошло наш отбор.
             </p>
 
             <p className="text-[#F5F5F0]/40 text-base leading-relaxed mb-12 max-w-md">
-              Бренд — это просто слово. Аромат — это вы.
+              Тёплый восточный на вечер. Свежий цитрусовый на каждый день.
+              Цветочный для особого настроения. Мы знаем, какой аромат подойдёт именно тебе.
             </p>
 
             {/* Gold divider */}
@@ -66,7 +67,7 @@ export function StorySection() {
             <blockquote className="relative pl-6">
               <div className="absolute left-0 top-0 w-px h-full bg-[#C9A96E]/30" />
               <p className="font-heading text-xl lg:text-2xl text-[#F5F5F0]/70 italic leading-snug">
-                «Аромат — это эмоция. Её не должна стоить целая зарплата.»
+                «Аромат — это то, как ты себя чувствуешь. Мы просто помогаем найти твой.»
               </p>
             </blockquote>
           </motion.div>
@@ -116,7 +117,7 @@ export function StorySection() {
                   border: "1px solid rgba(201,169,110,0.2)",
                 }}
               >
-                <p className="text-[#C9A96E] text-[9px] tracking-[0.5em] uppercase mb-0.5">Вдохновлён лучшим</p>
+                <p className="text-[#C9A96E] text-[9px] tracking-[0.5em] uppercase mb-0.5">Наш выбор</p>
                 <p className="text-[#F5F5F0]/80 text-sm font-heading italic">Barakkat Rouge 540</p>
               </div>
             </motion.div>

@@ -11,8 +11,8 @@ interface StatItem {
 }
 
 const STATS: StatItem[] = [
-  { value: "8+", label: "ароматов", sublabel: "в коллекции", offset: 0 },
-  { value: "4 500 ₸", label: "за флакон", sublabel: "от 60 мл", offset: 40 },
+  { value: "8+", label: "ароматов", sublabel: "собрали для вас", offset: 0 },
+  { value: "4 500 ₸", label: "за флакон", sublabel: "60 мл", offset: 40 },
   { value: "5 000 ₸", label: "бесплатная", sublabel: "доставка по Астане", offset: -20 },
   { value: "Kaspi", label: "оплата QR", sublabel: "быстро и удобно", offset: 60 },
 ];
@@ -48,7 +48,7 @@ export function StatsSection() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
         <p className="text-[#C9A96E] text-[9px] tracking-[0.6em] uppercase mb-16">
-          Цифры
+          Коллекция в цифрах
         </p>
 
         {/* Broken grid */}

@@ -12,7 +12,7 @@ import { FinalCTA } from "@/components/features/home/FinalCTA";
 export const metadata: Metadata = {
   title: "SENSO — Inspired парфюмерия и K-beauty в Астане",
   description:
-    "Inspired парфюмерия AUMEKA от 4500₸ и корейская косметика в Астане. Акция 2+1 на все ароматы. Бесплатная доставка по Астане от 5000₸. Заказ через WhatsApp.",
+    "SENSO — парфюмерные кураторы в Астане. Подбираем ароматы под характер и настроение. Акция 2+1. Доставка по Астане.",
 };
 
 export default function HomePage() {

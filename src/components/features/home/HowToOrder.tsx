@@ -12,7 +12,7 @@ const STEPS: Step[] = [
   {
     number: "01",
     title: "Выберите аромат",
-    description: "Просмотрите каталог или напишите нам в WhatsApp — поможем подобрать по вашим предпочтениям.",
+    description: "Загляни в каталог или напиши нам — расскажем про ноты и поможем выбрать под настроение.",
   },
   {
     number: "02",
@@ -22,7 +22,7 @@ const STEPS: Step[] = [
   {
     number: "03",
     title: "Получите доставку",
-    description: "Доставляем по Астане. Бесплатно при заказе от 5 000 ₸.",
+    description: "Доставим по Астане. При заказе от 5 000 ₸ — бесплатно.",
   },
 ];
 
@@ -46,7 +46,7 @@ export function HowToOrder() {
           </p>
           <h2 className="font-heading text-[clamp(2rem,4.5vw,3.2rem)] text-[#F5F5F0] leading-tight">
             Три шага до<br />
-            <em className="text-[#C9A96E]">вашего аромата</em>
+            <em className="text-[#C9A96E]">твоего аромата</em>
           </h2>
         </div>
 

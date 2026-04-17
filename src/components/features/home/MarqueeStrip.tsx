@@ -1,5 +1,5 @@
 const MARQUEE_TEXT =
-  "SENSO · ЧУВСТВА · АРОМАТ · AUMEKA · ASTANA · 4500₸ · INSPIRED · ПАРФЮМ · LUXURY · ";
+  "SENSO · ЧУВСТВА · АРОМАТ · КОЛЛЕКЦИЯ · АСТАНА · КУРАТОРЫ · ЭМОЦИИ · НАСТРОЕНИЕ · СТИЛЬ · ";
 
 export function MarqueeStrip() {
   // Duplicate for seamless loop

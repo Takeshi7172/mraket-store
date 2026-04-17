@@ -68,7 +68,7 @@ export function FinalCTA() {
           transition={{ duration: 0.8 }}
           className="text-[#C9A96E] text-[9px] tracking-[0.6em] uppercase mb-10"
         >
-          Контакт
+          Найди свой аромат
         </motion.p>
 
         <motion.h2
@@ -89,8 +89,7 @@ export function FinalCTA() {
           transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
           className="text-[#F5F5F0]/45 text-lg leading-relaxed mb-12 max-w-xl mx-auto"
         >
-          Не знаете, что выбрать? Напишите нам — поможем подобрать аромат
-          под ваш характер и настроение.
+          Не знаешь, с чего начать? Напиши нам — подберём аромат под твой характер и настроение. Это бесплатно.
         </motion.p>
 
         <motion.div

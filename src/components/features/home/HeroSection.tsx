@@ -163,7 +163,7 @@ export function HeroSection() {
           variants={ITEM_VARIANTS}
           className="text-[#C9A96E] text-[10px] tracking-[0.6em] uppercase mb-10"
         >
-          SENSO COLLECTION
+          ПАРФЮМЕРНЫЕ КУРАТОРЫ · АСТАНА
         </motion.p>
 
         {/* Headline */}
@@ -182,9 +182,7 @@ export function HeroSection() {
           variants={ITEM_VARIANTS}
           className="text-[#F5F5F0]/50 text-lg sm:text-xl max-w-lg leading-relaxed mb-10"
         >
-          Парфюмерная коллекция для тех, кто выбирает аромат — не бренд.
-          От{" "}
-          <span className="text-[#C9A96E]">4 500 ₸</span> за флакон.
+          Каждый аромат — это состояние. Мы подобрали коллекцию, чтобы ты нашёл своё.
         </motion.p>
 
         {/* CTAs */}

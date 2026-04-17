@@ -4,7 +4,7 @@ import { ProductGrid } from "@/components/features/catalog/ProductGrid";
 export const metadata: Metadata = {
   title: "Каталог — SENSO | Парфюмерия и косметика в Астане",
   description:
-    "Весь каталог SENSO: inspired парфюмерия AUMEKA от 4500₸, K-beauty косметика и подарочные наборы. Доставка по Астане. Заказ через WhatsApp.",
+    "Весь каталог SENSO: парфюмерная коллекция AUMEKA, K-beauty косметика и подарочные наборы. Доставка по Астане.",
 };
 
 export default function CatalogPage() {
@@ -51,7 +51,7 @@ export default function CatalogPage() {
             Каталог
           </h1>
           <p className="text-[#F5F5F0]/40 text-lg max-w-md leading-relaxed">
-            Inspired парфюмерия, K-beauty косметика и подарочные наборы
+            Парфюмерная коллекция, K-beauty косметика и подарочные наборы
           </p>
         </div>
 

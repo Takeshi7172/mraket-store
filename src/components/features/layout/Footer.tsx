@@ -75,8 +75,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-[#F5F5F0]/40 text-sm leading-relaxed max-w-xs">
-              Inspired парфюмерия и корейская косметика. Те же ноты, что у
-              люксовых брендов — честная цена.
+              Парфюмерные кураторы. Ароматы и K-beauty, собранные со вкусом.
             </p>
             <p className="text-[10px] text-[#C9A96E] uppercase tracking-[0.4em]">
               Астана, Казахстан

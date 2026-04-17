@@ -3,9 +3,9 @@ import Link from "next/link";
 import { WHATSAPP_URL } from "@/data/products";
 
 export const metadata: Metadata = {
-  title: "О нас — SENSO | История бренда",
+  title: "О нас — SENSO | Парфюмерные кураторы в Астане",
   description:
-    "SENSO — это inspired парфюмерия и корейская косметика в Астане. Узнайте нашу историю: почему мы верим, что роскошный аромат не должен стоить целую зарплату.",
+    "SENSO — парфюмерные кураторы в Астане. Подбираем ароматы и K-beauty под ваш характер и настроение. Коллекция, собранная со вкусом.",
 };
 
 export default function AboutPage() {
@@ -41,17 +41,16 @@ export default function AboutPage() {
 
         <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
           <p className="text-[#C9A96E] text-[10px] tracking-[0.5em] uppercase mb-6">
-            Наша история
+            Кто мы
           </p>
           <h1 className="font-heading text-5xl lg:text-7xl xl:text-8xl text-[#F5F5F0] leading-tight mb-8">
-            Аромат — это эмоция.
+            Мы — парфюмерные
             <br />
-            <span className="text-[#C9A96E] italic">Не ценник.</span>
+            <span className="text-[#C9A96E] italic">кураторы.</span>
           </h1>
           <p className="text-[#F5F5F0]/50 text-xl max-w-2xl leading-relaxed">
-            Мы основали SENSO с одной идеей: люди в Астане заслуживают
-            те же ощущения от аромата, что и покупатели в парижских бутиках.
-            Без лишней переплаты.
+            Изучаем ноты, тестируем стойкость, подбираем ароматы под характер
+            и настроение. В коллекции SENSO — только то, что прошло наш отбор.
           </p>
         </div>
 
@@ -68,20 +67,20 @@ export default function AboutPage() {
               Философия
             </p>
             <h2 className="font-heading text-4xl lg:text-5xl text-[#0A0A0A] leading-tight">
-              Вдохновлены,
-              <br />а не скопированы
+              Коллекция,
+              <br />собранная со вкусом
             </h2>
             <div className="w-10 h-px bg-[#C9A96E]" />
             <p className="text-[#0A0A0A]/65 leading-relaxed text-base">
-              Все наши ароматы линейки AUMEKA создаются с уважением к своим
-              прообразам. Мы называем их «inspired» — потому что это честно.
-              Мы изучаем семейства нот, характер и настроение оригинальных
-              ароматов и воссоздаём ту же эмоцию.
+              Каждый аромат в SENSO — это осознанный выбор. Мы не просто
+              привозим продукты — мы изучаем семейства нот, оцениваем
+              раскрытие на коже, тестируем стойкость. Только после этого
+              аромат попадает в коллекцию.
             </p>
             <p className="text-[#0A0A0A]/65 leading-relaxed text-base">
-              Разница только в одном: мы не платим за маркетинг мировых домов
-              моды, за флаконы из хрусталя и за имя на этикетке.
-              Эту разницу мы передаём вам.
+              То же касается K-beauty: мы отбираем формулы, которые
+              действительно работают. Без маркетинговых обещаний — только
+              результат.
             </p>
           </div>
 
@@ -97,8 +96,8 @@ export default function AboutPage() {
               Наш принцип
             </p>
             <blockquote className="font-heading text-3xl text-[#F5F5F0] italic leading-snug">
-              &ldquo;Те же ноты.
-              <br />Честная цена.&rdquo;
+              &ldquo;Знаем ноты.
+              <br />Подберём твой.&rdquo;
             </blockquote>
             <div className="w-8 h-px bg-[#C9A96E]/40" />
             <p className="text-[#F5F5F0]/40 text-sm">
@@ -124,7 +123,7 @@ export default function AboutPage() {
               Наша миссия
             </p>
             <p className="font-heading text-3xl lg:text-5xl text-[#C9A96E] leading-tight max-w-3xl mx-auto italic">
-              «Роскошный аромат не должен стоить целую зарплату»
+              «Каждый заслуживает аромат, который раскрывает его характер»
             </p>
           </div>
         </section>
@@ -133,10 +132,10 @@ export default function AboutPage() {
         <section className="space-y-14 mb-28 lg:mb-40">
           <div className="space-y-3">
             <p className="text-[#C9A96E] text-[10px] tracking-[0.5em] uppercase">
-              Наш ассортимент
+              Наша коллекция
             </p>
             <h2 className="font-heading text-4xl lg:text-5xl text-[#0A0A0A]">
-              Что мы предлагаем
+              Что мы курируем
             </h2>
           </div>
 
@@ -145,19 +144,19 @@ export default function AboutPage() {
               {
                 icon: "◈",
                 title: "Парфюмерия AUMEKA",
-                desc: "8+ ароматов по 60–65 мл. Флаконы из тёмного стекла, стойкость на весь день. Вдохновлены лучшим — от MFK до Tom Ford.",
+                desc: "8+ ароматов, отобранных нашими кураторами. Восточные, цветочные, древесные — каждый раскрывает разное настроение. Стойкость на весь день.",
                 price: "от 4 500 ₸",
               },
               {
                 icon: "◇",
                 title: "K-beauty косметика",
-                desc: "Корейская косметика с доказанным результатом. 4-in-1 ампула, осветляющие кремы, уход за губами.",
+                desc: "Корейская косметика, которая работает. Многоступенчатый уход, ампулы, кремы — мы выбрали формулы с реальным результатом.",
                 price: "от 800 ₸",
               },
               {
                 icon: "◈",
                 title: "Наборы в подарок",
-                desc: "Готовые наборы «First Date» и «Gift» — для первого знакомства с коллекцией или как подарок близкому человеку.",
+                desc: "Готовые наборы для первого знакомства с коллекцией. Идеально как подарок или старт в мир ароматов SENSO.",
                 price: "от 5 500 ₸",
               },
             ].map((item) => (
@@ -191,22 +190,21 @@ export default function AboutPage() {
           }}
         >
           <p className="text-[#C9A96E] text-[10px] tracking-[0.5em] uppercase">
-            Наше обещание
+            Наш подход
           </p>
           <h2 className="font-heading text-3xl lg:text-4xl text-[#F5F5F0]">
-            Честность — прежде всего
+            Экспертиза и открытость
           </h2>
           <div className="w-10 h-px bg-[#C9A96E]/40" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#F5F5F0]/50 text-sm leading-relaxed">
             <p>
-              Мы никогда не называем наши продукты оригиналами или копиями
-              дизайнерских брендов. Все права на оригинальные ароматы
-              принадлежат их создателям.
+              Мы открыто рассказываем о вдохновении наших ароматов. AUMEKA —
+              самостоятельная коллекция, созданная в определённых семействах
+              нот. Мы не продаём подделки — мы курируем ароматы.
             </p>
             <p>
-              AUMEKA и другие позиции — это самостоятельные продукты,
-              вдохновлённые эстетикой и нотами известных ароматов.
-              Мы работаем честно и открыто.
+              Наша экспертиза — подбор аромата под ваш характер. Напишите нам,
+              расскажите о себе — и мы предложим именно тот, который станет вашим.
             </p>
           </div>
           <div className="pt-2">
