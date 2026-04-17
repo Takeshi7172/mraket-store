@@ -62,10 +62,10 @@ export function Navbar() {
             <Link
               href="/"
               className="flex-shrink-0 group"
-              aria-label="SENSO — на главную"
+              aria-label="SENZA — на главную"
             >
               <span className="font-heading text-2xl lg:text-3xl tracking-[0.35em] font-light text-[#F5F5F0] group-hover:text-[#C9A96E] transition-colors duration-300">
-                SENSO
+                SENZA
               </span>
             </Link>
 
@@ -204,7 +204,7 @@ export function Navbar() {
               className="absolute bottom-10 left-0 right-0 text-center"
             >
               <span className="text-[#F5F5F0]/15 text-xs tracking-[0.4em] uppercase">
-                Почувствуй, это SENSO
+                Почувствуй, это SENZA
               </span>
             </motion.div>
           </motion.div>

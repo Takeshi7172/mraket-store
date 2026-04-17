@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import { ProductGrid } from "@/components/features/catalog/ProductGrid";
 
 export const metadata: Metadata = {
-  title: "Каталог — SENSO | Парфюмерия и косметика в Астане",
+  title: "Каталог — SENZA | Ароматы, уход и подарки в Астане",
   description:
-    "Весь каталог SENSO: парфюмерная коллекция AUMEKA, K-beauty косметика и подарочные наборы. Доставка по Астане.",
+    "Весь каталог SENZA: ароматы, уход за кожей и подарочные наборы. Доставка по Астане.",
 };
 
 export default function CatalogPage() {
   return (
-    <div className="min-h-screen bg-[#F5F5F0] pt-20">
+    <div className="min-h-screen bg-[#FFFCF5] pt-20">
       {/* Header */}
       <div
         className="relative pt-16 pb-20 overflow-hidden"
-        style={{ background: "#0A0A0A" }}
+        style={{ background: "#0E0E0E" }}
       >
         {/* Bloom */}
         <div
@@ -51,7 +51,7 @@ export default function CatalogPage() {
             Каталог
           </h1>
           <p className="text-[#F5F5F0]/40 text-lg max-w-md leading-relaxed">
-            Парфюмерная коллекция, K-beauty косметика и подарочные наборы
+            Ароматы, уход за кожей и подарочные наборы
           </p>
         </div>
 

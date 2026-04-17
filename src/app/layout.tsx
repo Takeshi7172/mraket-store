@@ -5,8 +5,6 @@ import "./globals.css";
 import { NavbarWrapper } from "@/components/features/layout/NavbarWrapper";
 import { Footer } from "@/components/features/layout/Footer";
 import { WhatsAppCTA } from "@/components/features/layout/WhatsAppCTA";
-import { LenisProvider } from "@/components/features/home/LenisProvider";
-import { CustomCursor } from "@/components/features/home/CustomCursor";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -21,18 +19,18 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "SENSO — Inspired парфюмерия и K-beauty в Астане",
+  title: "SENZA — Ароматы, уход и подарки в Астане",
   description:
-    "SENSO — парфюмерные кураторы в Астане. Ароматы и K-beauty, подобранные под ваш характер. Коллекция AUMEKA, корейская косметика, подарочные наборы.",
+    "SENZA — кураторы чувств в Астане. Ароматы, уход за кожей и подарки, собранные со вкусом. Акция 2+1 на ароматы. Доставка по Астане.",
   keywords:
-    "парфюмерные кураторы Астана, подбор аромата Астана, AUMEKA, корейская косметика, K-beauty Казахстан, духи 4500 тенге, бесплатная доставка Астана",
+    "парфюмерия Астана, уход за кожей Астана, корейская косметика, подарки Астана, ароматы куратор, SENZA",
   openGraph: {
-    title: "SENSO — Inspired парфюмерия и K-beauty в Астане",
+    title: "SENZA — Ароматы, уход и подарки в Астане",
     description:
-      "SENSO — парфюмерные кураторы в Астане. Ароматы и K-beauty, подобранные под ваш характер. Акция 2+1 на все ароматы.",
+      "SENZA — кураторы чувств. Отбираем ароматы, уход и подарки, которые раскрывают тебя. Акция 2+1 на ароматы.",
     type: "website",
     locale: "ru_KZ",
-    siteName: "SENSO",
+    siteName: "SENZA",
   },
 };
 
@@ -47,13 +45,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
       className={`${inter.variable} ${playfair.variable} h-full`}
     >
       <body className="min-h-full flex flex-col antialiased">
-        <LenisProvider>
-          <CustomCursor />
-          <NavbarWrapper />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <WhatsAppCTA />
-        </LenisProvider>
+        <NavbarWrapper />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <WhatsAppCTA />
       </body>
     </html>
   );

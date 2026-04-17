@@ -16,11 +16,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const product = getProductBySlug(slug);
 
   if (!product) {
-    return { title: "Продукт не найден — SENSO" };
+    return { title: "Продукт не найден — SENZA" };
   }
 
   return {
-    title: `${product.name} — SENSO | ${product.price.toLocaleString("ru-KZ")}₸`,
+    title: `${product.name} — SENZA | ${product.price.toLocaleString("ru-KZ")}₸`,
     description: product.description,
     openGraph: {
       title: `${product.name} — ${product.price.toLocaleString("ru-KZ")}₸`,

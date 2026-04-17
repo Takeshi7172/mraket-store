@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { WHATSAPP_URL, FREE_DELIVERY_TEXT } from "@/data/products";
 
 const WHATSAPP_ICON = (
@@ -12,98 +11,40 @@ const WHATSAPP_ICON = (
 );
 
 export function FinalCTA() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  const blobY = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], [20, -20]);
-
   return (
     <section
-      ref={ref}
-      className="relative overflow-hidden flex items-center justify-center min-h-screen py-24"
-      style={{ background: "#070707" }}
+      className="py-28 px-6"
+      style={{ background: "#0E0E0E" }}
+      aria-label="Контакт"
     >
-      {/* Gold blob */}
       <motion.div
-        style={{ y: blobY }}
-        className="absolute inset-0 pointer-events-none z-0"
-        aria-hidden="true"
+        className="max-w-2xl mx-auto text-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "min(800px, 100vw)",
-            height: "min(800px, 100vw)",
-            background:
-              "radial-gradient(ellipse at 50% 50%, rgba(201,169,110,0.10) 0%, rgba(232,196,196,0.04) 40%, transparent 65%)",
-            filter: "blur(60px)",
-          }}
-        />
-      </motion.div>
-
-      {/* Grain */}
-      <div
-        className="absolute inset-0 z-0 opacity-[0.12] pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E")`,
-        }}
-        aria-hidden="true"
-      />
-
-      <motion.div
-        style={{ y: textY }}
-        className="relative z-10 max-w-3xl mx-auto px-6 lg:px-16 text-center"
-      >
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-[#C9A96E] text-[9px] tracking-[0.6em] uppercase mb-10"
-        >
+        <p className="text-[#C9A96E] text-[9px] tracking-[0.6em] uppercase mb-8">
           Найди свой аромат
-        </motion.p>
+        </p>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-heading text-[clamp(2.5rem,8vw,6rem)] text-[#F5F5F0] leading-tight mb-8"
+        <h2
+          className="font-heading text-[#F5F5F0] leading-tight mb-6"
+          style={{ fontSize: "clamp(2rem,6vw,4rem)" }}
         >
-          Твои чувства,<br />
-          <em className="text-[#C9A96E]">твой аромат</em>
-        </motion.h2>
+          Не знаешь, с чего начать?
+        </h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="text-[#F5F5F0]/45 text-lg leading-relaxed mb-12 max-w-xl mx-auto"
-        >
-          Не знаешь, с чего начать? Напиши нам — подберём аромат под твой характер и настроение. Это бесплатно.
-        </motion.p>
+        <p className="text-[#F5F5F0]/50 text-base leading-relaxed mb-10 max-w-md mx-auto">
+          Напиши нам — подберём аромат или уход под твоё настроение.
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-14"
-        >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#C9A96E] text-[#0A0A0A] px-10 py-5 text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#e0c080] transition-colors duration-300"
+            className="inline-flex items-center gap-3 bg-[#C9A96E] text-[#1A1A1A] px-10 py-4 text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#B8944F] transition-colors duration-300"
           >
             {WHATSAPP_ICON}
             Написать в WhatsApp
@@ -111,26 +52,19 @@ export function FinalCTA() {
 
           <Link
             href="/catalog"
-            className="inline-flex items-center gap-2 border border-[#F5F5F0]/15 text-[#F5F5F0]/55 px-10 py-5 text-xs tracking-[0.3em] uppercase hover:border-[#C9A96E]/50 hover:text-[#C9A96E] transition-all duration-300"
+            className="inline-flex items-center gap-2 border border-[#F5F5F0]/15 text-[#F5F5F0]/50 px-10 py-4 text-xs tracking-[0.3em] uppercase hover:border-[#C9A96E]/50 hover:text-[#C9A96E] transition-all duration-300"
           >
             Весь каталог
           </Link>
-        </motion.div>
+        </div>
 
-        {/* Bottom notes */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 text-[11px] text-[#F5F5F0]/25"
-        >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-[11px] text-[#F5F5F0]/25">
           <span>{FREE_DELIVERY_TEXT}</span>
           <span className="hidden sm:inline text-[#F5F5F0]/10">·</span>
           <span>Оплата Kaspi QR</span>
           <span className="hidden sm:inline text-[#F5F5F0]/10">·</span>
           <span>Астана</span>
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );

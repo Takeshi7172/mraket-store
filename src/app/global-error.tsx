@@ -9,7 +9,7 @@ export default function GlobalError({ reset }: GlobalErrorProps) {
   return (
     <html lang="ru">
       <head>
-        <title>Ошибка — SENSO</title>
+        <title>Ошибка — SENZA</title>
       </head>
       <body
         style={{

@@ -19,7 +19,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
   const orderUrl = getWhatsAppOrderUrl(product.name, product.price);
 
   return (
-    <div className="min-h-screen bg-[#F5F5F0] pt-20">
+    <div className="min-h-screen bg-[#FFFCF5] pt-20">
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6">
         <nav

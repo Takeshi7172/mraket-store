@@ -1,31 +1,27 @@
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/features/home/HeroSection";
-import { MarqueeStrip } from "@/components/features/home/MarqueeStrip";
+import { BrandIntro } from "@/components/features/home/BrandIntro";
+import { FeaturedGrid } from "@/components/features/home/FeaturedGrid";
 import { StorySection } from "@/components/features/home/StorySection";
-import { HorizontalProducts } from "@/components/features/home/HorizontalProducts";
-import { StatsSection } from "@/components/features/home/StatsSection";
-import { PromoSection } from "@/components/features/home/PromoSection";
-import { TestimonialsSection } from "@/components/features/home/TestimonialsSection";
-import { HowToOrder } from "@/components/features/home/HowToOrder";
+import { PromoStrip } from "@/components/features/home/PromoStrip";
+import { Reviews } from "@/components/features/home/Reviews";
 import { FinalCTA } from "@/components/features/home/FinalCTA";
 
 export const metadata: Metadata = {
-  title: "SENSO — Inspired парфюмерия и K-beauty в Астане",
+  title: "SENZA — Ароматы, уход и подарки в Астане",
   description:
-    "SENSO — парфюмерные кураторы в Астане. Подбираем ароматы под характер и настроение. Акция 2+1. Доставка по Астане.",
+    "SENZA — кураторы чувств в Астане. Подбираем ароматы, уход и подарки под твоё настроение. Акция 2+1. Доставка по Астане.",
 };
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <MarqueeStrip />
+      <BrandIntro />
+      <FeaturedGrid />
       <StorySection />
-      <HorizontalProducts />
-      <StatsSection />
-      <PromoSection />
-      <TestimonialsSection />
-      <HowToOrder />
+      <PromoStrip />
+      <Reviews />
       <FinalCTA />
     </>
   );
