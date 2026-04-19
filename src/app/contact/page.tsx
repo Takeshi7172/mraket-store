@@ -75,7 +75,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-[#FAF5ED] pt-20">
       {/* Header */}
       <div
-        className="relative pt-16 pb-24 overflow-hidden grain-overlay"
+        className="relative pt-16 pb-24 overflow-hidden"
         style={{ background: "#0B0A08" }}
       >
         <div

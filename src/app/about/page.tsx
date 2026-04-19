@@ -13,7 +13,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-[#FAF5ED] pt-20">
       {/* Hero */}
       <div
-        className="relative overflow-hidden pt-20 pb-32 grain-overlay"
+        className="relative overflow-hidden pt-20 pb-32"
         style={{ background: "#0B0A08" }}
       >
         <div
@@ -87,7 +87,7 @@ export default function AboutPage() {
 
         {/* Mission quote */}
         <section
-          className="relative py-20 px-10 lg:px-20 mb-32 lg:mb-44 text-center overflow-hidden grain-overlay"
+          className="relative py-20 px-10 lg:px-20 mb-32 lg:mb-44 text-center overflow-hidden"
           style={{ background: "#0B0A08" }}
         >
           <div

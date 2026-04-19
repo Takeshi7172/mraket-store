@@ -14,14 +14,10 @@ interface ProductCardProps {
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{
-        duration: 0.6,
-        delay: (index % 4) * 0.08,
-        ease: [0.22, 1, 0.36, 1],
-      }}
+      transition={{ duration: 0.5 }}
     >
       <Link
         href={`/catalog/${product.slug}`}
@@ -34,7 +30,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
             src={product.image}
             alt={product.name}
             fill
-            className="object-cover photo-warm transition-transform duration-700 group-hover:scale-105 product-image-blend"
+            className="object-cover transition-transform duration-700 group-hover:scale-105 product-image-blend"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
 

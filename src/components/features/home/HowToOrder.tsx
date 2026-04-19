@@ -23,7 +23,7 @@ const STEPS = [
 export function HowToOrder() {
   return (
     <section
-      className="relative py-32 lg:py-40 px-6 overflow-hidden grain-overlay"
+      className="relative py-32 lg:py-40 px-6 overflow-hidden"
       style={{ background: "#0B0A08" }}
       aria-label="Как заказать"
     >
@@ -33,7 +33,7 @@ export function HowToOrder() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.5 }}
         >
           <p className="text-[#C4956A] text-[9px] tracking-[0.6em] uppercase mb-5">
             Как заказать
@@ -63,7 +63,7 @@ export function HowToOrder() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.5 }}
               >
                 <div
                   className="relative z-10 w-16 h-16 flex items-center justify-center mb-8 transition-all duration-300 group-hover:shadow-[0_0_25px_rgba(196,149,106,0.12)]"

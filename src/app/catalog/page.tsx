@@ -12,7 +12,7 @@ export default function CatalogPage() {
     <div className="min-h-screen bg-[#FAF5ED] pt-[64px] lg:pt-[80px]">
       {/* Hero Header */}
       <div
-        className="relative pt-14 pb-18 overflow-hidden grain-overlay"
+        className="relative pt-14 pb-18 overflow-hidden"
         style={{ background: "#0B0A08" }}
       >
         <div

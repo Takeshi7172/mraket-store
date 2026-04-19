@@ -41,13 +41,10 @@ export function PromoCard({ product, index, showPromo = false }: PromoCardProps)
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 32 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{
-        duration: 0.65,
-        ease: [0.22, 1, 0.36, 1],
-      }}
+      transition={{ duration: 0.5 }}
       aria-label={product.name}
     >
       {/* Mobile layout */}
@@ -77,7 +74,7 @@ export function PromoCard({ product, index, showPromo = false }: PromoCardProps)
               src={product.image}
               alt={product.name}
               fill
-              className="object-contain product-image-blend photo-warm"
+              className="object-contain product-image-blend"
               sizes="100vw"
             />
           </div>
@@ -156,7 +153,7 @@ export function PromoCard({ product, index, showPromo = false }: PromoCardProps)
             src={product.image}
             alt={product.name}
             fill
-            className="object-contain product-image-blend photo-warm transition-transform duration-700 hover:scale-105"
+            className="object-contain product-image-blend"
             sizes="50vw"
           />
           {showPromo && (

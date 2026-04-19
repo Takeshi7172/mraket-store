@@ -1,40 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 export function StorySection() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const imageY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
-
   return (
     <section
-      ref={ref}
-      className="relative py-0 overflow-hidden grain-overlay"
+      className="relative py-0 overflow-hidden"
       style={{ background: "#0B0A08" }}
       aria-label="Наш подход"
     >
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
-          {/* Image — full height, parallax */}
+          {/* Image — full height */}
           <div className="relative h-[60vh] lg:h-auto overflow-hidden order-1 lg:order-2">
-            <motion.div
-              className="absolute inset-[-15%] w-[130%] h-[130%]"
-              style={{ y: imageY }}
-            >
-              <Image
-                src="/products/photo_10.jpg"
-                alt="SENZA аромат"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover photo-noir"
-              />
-            </motion.div>
+            <Image
+              src="/products/photo_10.jpg"
+              alt="SENZA аромат"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
             {/* Gradient fade to left */}
             <div
               className="absolute inset-0 pointer-events-none hidden lg:block"
@@ -59,10 +45,10 @@ export function StorySection() {
           <div className="relative z-10 flex flex-col justify-center px-8 lg:px-16 xl:px-24 py-20 lg:py-32 order-2 lg:order-1">
             <motion.div
               className="space-y-8 max-w-lg"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5 }}
             >
               <p className="text-[#C4956A] text-[9px] tracking-[0.6em] uppercase">
                 Наш подход

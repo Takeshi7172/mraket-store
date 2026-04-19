@@ -8,7 +8,7 @@ import { WHATSAPP_URL } from "@/data/products";
 export function HeroSection() {
   return (
     <section
-      className="relative flex items-center justify-center min-h-[100dvh] overflow-hidden grain-overlay"
+      className="relative flex items-center justify-center min-h-[100dvh] overflow-hidden"
       aria-label="Главный баннер"
       style={{ background: "#0B0A08" }}
     >
@@ -20,7 +20,7 @@ export function HeroSection() {
             src="/products/photo_10.jpg"
             alt=""
             fill
-            className="object-cover photo-noir"
+            className="object-cover"
             sizes="45vw"
             priority
           />
@@ -31,7 +31,7 @@ export function HeroSection() {
             src="/products/photo_9.jpg"
             alt=""
             fill
-            className="object-cover photo-noir"
+            className="object-cover"
             sizes="55vw"
             priority
           />
@@ -42,7 +42,7 @@ export function HeroSection() {
             src="/products/photo_4.jpg"
             alt=""
             fill
-            className="object-cover photo-noir"
+            className="object-cover"
             sizes="55vw"
             priority
           />
@@ -83,7 +83,7 @@ export function HeroSection() {
           className="text-[#C4956A] text-[9px] sm:text-[10px] tracking-[0.6em] uppercase mb-12"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.5 }}
         >
           Ароматы &middot; Уход &middot; Косметика
         </motion.p>
@@ -92,9 +92,9 @@ export function HeroSection() {
         <motion.h1
           className="font-heading font-light leading-[0.88] tracking-tight select-none text-[#E8E2D8] mb-8"
           style={{ fontSize: "clamp(3.5rem, 12vw, 10rem)" }}
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.5 }}
         >
           <span className="block">Почувствуй</span>
           <span className="block mt-[-0.05em]">
@@ -110,7 +110,7 @@ export function HeroSection() {
           className="text-[#E8E2D8]/40 text-base sm:text-lg max-w-md leading-relaxed mb-14"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.5 }}
         >
           Мы перепробовали сотни продуктов и оставили лучшее.<br className="hidden sm:block" /> Ароматы, уход, косметика — с доставкой по Астане.
         </motion.p>
@@ -120,7 +120,7 @@ export function HeroSection() {
           className="flex flex-col sm:flex-row items-center gap-4"
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1 }}
+          transition={{ duration: 0.5 }}
         >
           <Link
             href="/catalog"
@@ -147,7 +147,7 @@ export function HeroSection() {
         className="absolute bottom-0 left-0 right-0 z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.8 }}
+        transition={{ duration: 0.5 }}
       >
         <div className="divider-copper" />
         <div className="flex items-center justify-between px-6 lg:px-12 py-4 text-[9px] tracking-[0.4em] uppercase">

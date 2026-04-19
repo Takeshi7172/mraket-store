@@ -12,7 +12,7 @@ interface PromoBannerProps {
 export function PromoBanner({ heading, subtitle, badge, priceCallout }: PromoBannerProps) {
   return (
     <div
-      className="relative w-full overflow-hidden grain-overlay"
+      className="relative w-full overflow-hidden"
       style={{ background: "#0B0A08", minHeight: "260px" }}
     >
       {/* Copper glow */}
@@ -53,10 +53,10 @@ export function PromoBanner({ heading, subtitle, badge, priceCallout }: PromoBan
         )}
 
         <motion.h2
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.08 }}
+          transition={{ duration: 0.5 }}
           className="font-heading font-light text-[#E8E2D8] leading-none mb-4"
           style={{ fontSize: "clamp(2.4rem, 5vw, 4rem)" }}
         >
@@ -64,10 +64,10 @@ export function PromoBanner({ heading, subtitle, badge, priceCallout }: PromoBan
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.16 }}
+          transition={{ duration: 0.5 }}
           className="text-[#E8E2D8]/40 text-[13px] lg:text-[15px] max-w-md leading-relaxed mb-4"
         >
           {subtitle}
@@ -78,7 +78,7 @@ export function PromoBanner({ heading, subtitle, badge, priceCallout }: PromoBan
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.26 }}
+            transition={{ duration: 0.5 }}
             className="text-[#C4956A] text-[11px] tracking-[0.2em] uppercase"
           >
             {priceCallout}

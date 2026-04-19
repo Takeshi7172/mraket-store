@@ -60,7 +60,7 @@ export function TestimonialsSection() {
 
   return (
     <section
-      className="relative py-32 lg:py-44 overflow-hidden flex items-center justify-center min-h-[65vh] grain-overlay"
+      className="relative py-32 lg:py-44 overflow-hidden flex items-center justify-center min-h-[65vh]"
       style={{ background: "#0B0A08" }}
       aria-label="Отзывы"
     >
@@ -102,7 +102,7 @@ export function TestimonialsSection() {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.5 }}
                 className="absolute inset-0 flex items-center justify-center"
               >
                 <blockquote className="text-center max-w-2xl mx-auto px-4">

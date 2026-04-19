@@ -23,10 +23,10 @@ export function BrandIntro() {
         {/* Large editorial quote */}
         <motion.div
           className="text-center"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.5 }}
         >
           <p
             className="font-heading font-light text-[#E8E2D8]/70 leading-[1.3] italic"
@@ -45,7 +45,7 @@ export function BrandIntro() {
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.5 }}
         />
 
         {/* Sub-text */}
@@ -54,7 +54,7 @@ export function BrandIntro() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.5 }}
         >
           Астана, Казахстан
         </motion.p>

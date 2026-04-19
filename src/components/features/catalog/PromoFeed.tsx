@@ -192,7 +192,7 @@ export function PromoFeed() {
 
       {/* ── Final CTA Section ─────────────────────────────── */}
       <div
-        className="relative overflow-hidden grain-overlay"
+        className="relative overflow-hidden"
         style={{ background: "#0B0A08" }}
       >
         {/* Copper glow */}
@@ -210,7 +210,7 @@ export function PromoFeed() {
 
         <div className="relative z-10 max-w-[700px] mx-auto px-6 py-20 lg:py-28 text-center">
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
@@ -221,10 +221,10 @@ export function PromoFeed() {
           </motion.p>
 
           <motion.h2
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.08 }}
+            transition={{ duration: 0.5 }}
             className="font-heading font-light leading-tight mb-4"
             style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", color: "#E8E2D8" }}
           >
@@ -235,7 +235,7 @@ export function PromoFeed() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.18 }}
+            transition={{ duration: 0.5 }}
             className="text-[13px] lg:text-[15px] leading-relaxed mb-10"
             style={{ color: "rgba(232,226,216,0.4)" }}
           >
@@ -244,10 +244,10 @@ export function PromoFeed() {
 
           {/* WhatsApp buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: 0.26 }}
+            transition={{ duration: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10"
           >
             {WHATSAPP_NUMBERS.map(({ number, label }) => (
@@ -279,7 +279,7 @@ export function PromoFeed() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.36 }}
+            transition={{ duration: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6 text-[11px] tracking-[0.1em]"
             style={{ color: "rgba(232,226,216,0.3)" }}
           >

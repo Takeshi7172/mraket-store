@@ -7,7 +7,7 @@ import { WHATSAPP_URL, FREE_DELIVERY_TEXT } from "@/data/products";
 export function FinalCTA() {
   return (
     <section
-      className="relative py-36 lg:py-44 px-6 overflow-hidden grain-overlay"
+      className="relative py-36 lg:py-44 px-6 overflow-hidden"
       style={{ background: "#0B0A08" }}
       aria-label="Контакт"
     >
@@ -26,7 +26,7 @@ export function FinalCTA() {
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.5 }}
       >
         <p className="text-[#C4956A] text-[9px] tracking-[0.6em] uppercase mb-10">
           Найди свой аромат

@@ -45,14 +45,14 @@ export function ProductDetail({ product }: ProductDetailProps) {
             className="lg:sticky lg:top-28"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
-                className="object-cover photo-warm product-image-blend"
+                className="object-cover product-image-blend"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
@@ -71,7 +71,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
             className="flex flex-col space-y-8 pt-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            transition={{ duration: 0.5 }}
           >
             <div className="space-y-3">
               <p className="text-[9px] text-[#C4956A] tracking-[0.5em] uppercase">

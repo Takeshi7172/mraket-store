@@ -21,7 +21,7 @@ export function FeaturedGrid() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.5 }}
           >
             <p className="text-[#C4956A] text-[9px] tracking-[0.6em] uppercase mb-4">
               Коллекция
@@ -37,7 +37,7 @@ export function FeaturedGrid() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5 }}
           >
             <Link
               href="/catalog"
@@ -59,14 +59,10 @@ export function FeaturedGrid() {
               <motion.div
                 key={product.id}
                 className={isLarge ? "lg:col-span-4" : "lg:col-span-2"}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{
-                  duration: 0.7,
-                  delay: i * 0.1,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
+                transition={{ duration: 0.5 }}
               >
                 <Link
                   href={`/catalog/${product.slug}`}
@@ -84,7 +80,7 @@ export function FeaturedGrid() {
                       src={product.image}
                       alt={product.name}
                       fill
-                      className="object-cover photo-warm transition-transform duration-700 group-hover:scale-105 product-image-blend"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105 product-image-blend"
                       sizes={
                         isLarge
                           ? "(max-width: 1024px) 50vw, 33vw"
