@@ -52,7 +52,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                 src={product.image}
                 alt={product.name}
                 fill
-                className="object-cover photo-warm"
+                className="object-cover photo-warm product-image-blend"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />

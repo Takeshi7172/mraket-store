@@ -215,6 +215,12 @@
   width: 100%;
 }
 
+/* ── Product image background blend ────────────────────────── */
+
+.product-image-blend {
+  mix-blend-mode: multiply;
+}
+
 /* ── Photo treatment ────────────────────────────────────────── */
 
 .photo-noir {

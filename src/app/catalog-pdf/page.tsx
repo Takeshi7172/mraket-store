@@ -89,7 +89,7 @@ function PerfumePage({ product }: PerfumePageProps) {
           alt={name}
           fill
           sizes="220px"
-          className="object-contain"
+          className="object-contain product-image-blend"
           style={{ filter: "contrast(1.05) brightness(0.96) saturate(0.88)" }}
         />
       </div>
@@ -259,7 +259,7 @@ function SkincareCard({ product }: SkincareCardProps) {
           alt={product.name}
           fill
           sizes="72px"
-          className="object-contain"
+          className="object-contain product-image-blend"
         />
       </div>
       <div className="flex-1 min-w-0">
@@ -320,7 +320,7 @@ function GiftCard({ product }: GiftCardProps) {
             alt={product.name}
             fill
             sizes="88px"
-            className="object-contain"
+            className="object-contain product-image-blend"
           />
         </div>
         <div className="flex-1 min-w-0">
@@ -624,7 +624,9 @@ function BackCoverPage() {
 
         {/* Contact rows */}
         <div className="w-full max-w-xs space-y-4">
-          <ContactRow icon="wa" label="WhatsApp" value="+7 (XXX) XXX-XX-XX" />
+          <ContactRow icon="wa" label="WhatsApp 1" value="+7 (708) 665-95-17" />
+          <ContactRow icon="wa" label="WhatsApp 2" value="+7 (771) 222-22-45" />
+          <ContactRow icon="wa" label="WhatsApp 3" value="+7 (705) 444-32-31" />
           <ContactRow icon="tg" label="Telegram" value="@senza" />
           <ContactRow icon="ig" label="Instagram" value="@senza" />
         </div>

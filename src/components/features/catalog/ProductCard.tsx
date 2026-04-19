@@ -34,7 +34,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
             src={product.image}
             alt={product.name}
             fill
-            className="object-cover photo-warm transition-transform duration-700 group-hover:scale-105"
+            className="object-cover photo-warm transition-transform duration-700 group-hover:scale-105 product-image-blend"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
 

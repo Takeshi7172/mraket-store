@@ -84,7 +84,7 @@ export function FeaturedGrid() {
                       src={product.image}
                       alt={product.name}
                       fill
-                      className="object-cover photo-warm transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover photo-warm transition-transform duration-700 group-hover:scale-105 product-image-blend"
                       sizes={
                         isLarge
                           ? "(max-width: 1024px) 50vw, 33vw"

@@ -158,7 +158,7 @@ export const products: Product[] = [
     name: "KIKO Milano Liquid Skin",
     brand: "KIKO Milano",
     category: "skincare",
-    price: 2000,
+    price: 2500,
     volume: "30 мл",
     description:
       "Лёгкий тональный флюид с натуральным финишем. Идеально выравнивает тон, не забивает поры, держится весь день.",
@@ -170,7 +170,7 @@ export const products: Product[] = [
     name: "PUSY Brow Gel",
     brand: "PUSY",
     category: "skincare",
-    price: 1500,
+    price: 2000,
     volume: "10 мл",
     description:
       "Фиксирующий гель для бровей. Надёжная фиксация на весь день, естественный объём и ухоженный вид без утяжеления.",
@@ -182,7 +182,7 @@ export const products: Product[] = [
     name: "Gold Retinol Snake Venom Mask",
     brand: "SENZA Beauty",
     category: "skincare",
-    price: 1200,
+    price: 3500,
     volume: "1 шт",
     description:
       "Золотая маска с ретинолом и пептидом змеиного яда. Лифтинг-эффект, разглаживание морщин, сияние за 20 минут.",
@@ -190,7 +190,14 @@ export const products: Product[] = [
   },
 ];
 
-export const WHATSAPP_NUMBER = "77XXXXXXXXX";
+export const WHATSAPP_NUMBERS = [
+  { number: "87086659517", label: "WhatsApp 1" },
+  { number: "87712222245", label: "WhatsApp 2" },
+  { number: "87054443231", label: "WhatsApp 3" },
+] as const;
+
+// Primary number for single-link contexts (order buttons, etc.)
+export const WHATSAPP_NUMBER = WHATSAPP_NUMBERS[0].number;
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export function buildOrderMessage(productName: string, price: number): string {
