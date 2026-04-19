@@ -27,7 +27,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-[#E8E2D8]/30 text-sm leading-relaxed max-w-xs">
-              Кураторы чувств. Ароматы, уход и подарки — собранные со вкусом.
+              Ароматы и корейская косметика в Астане. Выбираем лучшее — привозим к вам.
             </p>
             <p className="text-[9px] text-[#C4956A]/60 uppercase tracking-[0.5em]">
               Астана, Казахстан

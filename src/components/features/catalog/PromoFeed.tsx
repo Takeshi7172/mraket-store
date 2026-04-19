@@ -150,7 +150,7 @@ export function PromoFeed() {
       <div id="section-perfume">
         <PromoBanner
           heading="Парфюмерия AUMEKA"
-          subtitle="Вдохновлённые легендарными ароматами"
+          subtitle="Акция 1+1 — два аромата дешевле одного"
           badge={PROMO_1_PLUS_1}
           priceCallout="9 900 ₸ за флакон · Два за 14 990 ₸"
         />

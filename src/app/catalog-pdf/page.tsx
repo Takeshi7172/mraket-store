@@ -64,7 +64,7 @@ interface PerfumePageProps {
 }
 
 function PerfumePage({ product }: PerfumePageProps) {
-  const { name, inspiration, notes, price, volume, image } = product;
+  const { name, notes, price, volume, image } = product;
 
   return (
     <section
@@ -108,7 +108,7 @@ function PerfumePage({ product }: PerfumePageProps) {
         </span>
       </div>
 
-      {/* Name + inspiration */}
+      {/* Name */}
       <div className="px-8 mt-4 text-center">
         <h2
           style={{
@@ -122,20 +122,6 @@ function PerfumePage({ product }: PerfumePageProps) {
         >
           {name}
         </h2>
-        {inspiration && (
-          <p
-            className="mt-1.5"
-            style={{
-              fontFamily: "var(--font-cormorant), 'Cormorant Garamond', serif",
-              fontStyle: "italic",
-              fontSize: "0.875rem",
-              color: "#8A8478",
-              letterSpacing: "0.01em",
-            }}
-          >
-            вдохновлён {inspiration}
-          </p>
-        )}
       </div>
 
       <CopperDivider className="mx-6 mt-5" />
@@ -494,8 +480,8 @@ function SkincareSection() {
           className="text-[11px] leading-relaxed"
           style={{ color: "#8A8478", letterSpacing: "0.02em" }}
         >
-          Вся уходовая косметика проходит куратурный отбор. Подходит для
-          ежедневного ухода. Консультация по подбору — бесплатно.
+          Вся косметика проверена лично. Подходит для ежедневного ухода.
+          Консультация по подбору — бесплатно.
         </p>
       </div>
 
@@ -611,7 +597,7 @@ function BackCoverPage() {
             letterSpacing: "0.04em",
           }}
         >
-          Кураторы чувств
+          Ароматы и косметика, Астана
         </p>
 
         <div

@@ -4,7 +4,7 @@ import { PromoFeed } from "@/components/features/catalog/PromoFeed";
 export const metadata: Metadata = {
   title: "Каталог — SENZA | Ароматы, уход и подарки в Астане",
   description:
-    "Весь каталог SENZA: ароматы, уход за кожей и подарочные наборы. Доставка по Астане.",
+    "Весь каталог SENZA: ароматы AUMEKA и корейская косметика. Доставка по Астане.",
 };
 
 export default function CatalogPage() {
@@ -46,7 +46,7 @@ export default function CatalogPage() {
             Каталог
           </h1>
           <p className="text-[#E8E2D8]/35 text-base max-w-md leading-relaxed">
-            Парфюмерия AUMEKA, уход за кожей и подарочные наборы — всё в одном месте
+            Парфюмерия AUMEKA и корейская косметика — всё в одном месте
           </p>
         </div>
 

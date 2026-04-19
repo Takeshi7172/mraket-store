@@ -39,7 +39,7 @@ export function PromoStrip() {
         </p>
 
         <p className="text-[#1A1814]/50 text-lg mb-10">
-          Купи один аромат — второй в подарок
+          Один флакон — 9 900 ₸. Два — 14 990. Математика простая.
         </p>
 
         <Link

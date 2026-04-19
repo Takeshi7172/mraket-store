@@ -11,7 +11,7 @@ import { FinalCTA } from "@/components/features/home/FinalCTA";
 export const metadata: Metadata = {
   title: "SENZA — Ароматы, уход и подарки в Астане",
   description:
-    "SENZA — кураторы чувств в Астане. Подбираем ароматы, уход и подарки под твоё настроение. Акция 1+1. Доставка по Астане.",
+    "SENZA — ароматы и корейская косметика в Астане. Акция 1+1 на парфюмерию. Доставка по городу.",
 };
 
 export default function HomePage() {

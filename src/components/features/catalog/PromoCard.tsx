@@ -97,11 +97,6 @@ export function PromoCard({ product, index, showPromo = false }: PromoCardProps)
                 {product.name}
               </h3>
             </Link>
-            {product.inspiration && (
-              <p className="text-[11px] italic" style={{ color: "rgba(26,24,20,0.35)" }}>
-                вдохновлён {product.inspiration}
-              </p>
-            )}
           </div>
 
           <p className="text-[13px] leading-relaxed" style={{ color: "rgba(26,24,20,0.55)" }}>
@@ -190,11 +185,6 @@ export function PromoCard({ product, index, showPromo = false }: PromoCardProps)
                 {product.name}
               </h3>
             </Link>
-            {product.inspiration && (
-              <p className="text-[12px] italic" style={{ color: "rgba(26,24,20,0.3)" }}>
-                вдохновлён {product.inspiration}
-              </p>
-            )}
           </div>
 
           <div className="w-10 h-px" style={{ background: "rgba(196,149,106,0.3)" }} />

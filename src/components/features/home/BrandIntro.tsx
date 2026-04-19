@@ -32,9 +32,9 @@ export function BrandIntro() {
             className="font-heading font-light text-[#E8E2D8]/70 leading-[1.3] italic"
             style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}
           >
-            Мы — кураторы. Отбираем ароматы, уход
-            за кожей и подарки, которые раскрывают
-            <em className="text-[#C4956A] not-italic font-normal"> тебя</em>.
+            Мы не производим косметику. Мы ищем лучшее — ароматы от AUMEKA,
+            косметику от KIKO Milano, Lancome, PUSY — и привозим
+            <em className="text-[#C4956A] not-italic font-normal"> в Астану</em>. Без наценок, без лишнего.
           </p>
         </motion.div>
 

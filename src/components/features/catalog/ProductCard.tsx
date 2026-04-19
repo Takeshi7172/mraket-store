@@ -71,11 +71,6 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           <h3 className="font-heading text-lg font-light text-[#1A1814] group-hover:text-[#C4956A] transition-colors duration-200">
             {product.name}
           </h3>
-          {product.inspiration && (
-            <p className="text-[11px] text-[#1A1814]/30 italic">
-              вдохновлён {product.inspiration}
-            </p>
-          )}
           <div className="flex items-center justify-between pt-1">
             <span className="text-[11px] text-[#1A1814]/30">{product.volume}</span>
             <span className="text-sm text-[#1A1814]/70">

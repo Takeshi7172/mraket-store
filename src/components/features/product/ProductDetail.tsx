@@ -83,11 +83,6 @@ export function ProductDetail({ product }: ProductDetailProps) {
               >
                 {product.name}
               </h1>
-              {product.inspiration && (
-                <p className="text-[#1A1814]/30 text-sm italic">
-                  вдохновлён {product.inspiration}
-                </p>
-              )}
             </div>
 
             <div className="w-12 h-px bg-[#C4956A]/30" />

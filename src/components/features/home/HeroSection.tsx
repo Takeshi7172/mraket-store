@@ -85,7 +85,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Ароматы &middot; Уход &middot; Подарки
+          Ароматы &middot; Уход &middot; Косметика
         </motion.p>
 
         {/* Headline — dramatic scale */}
@@ -112,7 +112,7 @@ export function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          Коллекция для тех, кто выбирает<br className="hidden sm:block" /> по чувствам — не по бренду
+          Мы перепробовали сотни продуктов и оставили лучшее.<br className="hidden sm:block" /> Ароматы, уход, косметика — с доставкой по Астане.
         </motion.p>
 
         {/* CTAs */}
