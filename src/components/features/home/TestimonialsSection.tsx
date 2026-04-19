@@ -28,7 +28,7 @@ const TESTIMONIALS: Testimonial[] = [
   {
     name: "Асем",
     age: 22,
-    text: "Крем 4-in-1 мне посоветовали в SENZA как must-have. Теперь понимаю почему — кожа как после корейского салона.",
+    text: "Крем 4-in-1 мне посоветовали в SENZA. Теперь понимаю почему — кожа как после корейского салона.",
   },
 ];
 
@@ -42,7 +42,7 @@ export function TestimonialsSection() {
   }, []);
 
   useEffect(() => {
-    const id = setInterval(advance, 5500);
+    const id = setInterval(advance, 6000);
     return () => clearInterval(id);
   }, [advance]);
 
@@ -56,70 +56,64 @@ export function TestimonialsSection() {
     setCurrent((c) => (c - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
   };
 
-  const variants = {
-    enter: (dir: number) => ({
-      opacity: 0,
-      x: dir > 0 ? 40 : -40,
-    }),
-    center: { opacity: 1, x: 0 },
-    exit: (dir: number) => ({
-      opacity: 0,
-      x: dir > 0 ? -40 : 40,
-    }),
-  };
-
   const t = TESTIMONIALS[current];
 
   return (
     <section
-      className="relative py-28 lg:py-44 overflow-hidden flex items-center justify-center min-h-[70vh]"
-      style={{ background: "#0A0A0A" }}
+      className="relative py-32 lg:py-44 overflow-hidden flex items-center justify-center min-h-[65vh] grain-overlay"
+      style={{ background: "#0B0A08" }}
+      aria-label="Отзывы"
     >
-      {/* Decorative gold blur */}
+      {/* Ambient glow */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle, rgba(201,169,110,0.06) 0%, transparent 65%)",
-          filter: "blur(40px)",
+          background: "radial-gradient(circle, rgba(196,149,106,0.04) 0%, transparent 60%)",
+          filter: "blur(60px)",
         }}
         aria-hidden="true"
       />
 
       <div className="max-w-4xl mx-auto px-6 lg:px-16 w-full relative z-10">
         <div className="text-center">
-          {/* Section label */}
-          <p className="text-[#C9A96E] text-[9px] tracking-[0.6em] uppercase mb-16">
-            Что говорят наши
+          <p className="text-[#C4956A] text-[9px] tracking-[0.6em] uppercase mb-20">
+            Что говорят клиенты
           </p>
 
-          {/* Large decorative quote */}
+          {/* Large decorative quote mark */}
           <div
-            className="font-heading text-[10rem] text-[#C9A96E]/08 leading-none select-none -mb-12 lg:-mb-16"
+            className="font-heading text-[8rem] lg:text-[12rem] text-[#C4956A]/[0.06] leading-none select-none -mb-16 lg:-mb-24"
             aria-hidden="true"
           >
-            "
+            &ldquo;
           </div>
 
-          {/* Testimonial content */}
-          <div className="relative min-h-[10rem] flex items-center justify-center">
+          {/* Testimonial carousel */}
+          <div className="relative min-h-[12rem] flex items-center justify-center">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={current}
                 custom={direction}
-                variants={variants}
+                variants={{
+                  enter: (d: number) => ({ opacity: 0, x: d > 0 ? 30 : -30 }),
+                  center: { opacity: 1, x: 0 },
+                  exit: (d: number) => ({ opacity: 0, x: d > 0 ? -30 : 30 }),
+                }}
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute inset-0 flex items-center justify-center"
               >
                 <blockquote className="text-center max-w-2xl mx-auto px-4">
-                  <p className="font-heading text-xl sm:text-2xl lg:text-3xl text-[#F5F5F0]/85 italic leading-snug mb-8">
-                    «{t.text}»
+                  <p
+                    className="font-heading font-light text-[#E8E2D8]/80 italic leading-snug mb-10"
+                    style={{ fontSize: "clamp(1.3rem, 3vw, 2rem)" }}
+                  >
+                    &laquo;{t.text}&raquo;
                   </p>
                   <footer>
-                    <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase">
+                    <p className="text-[#C4956A] text-[10px] tracking-[0.5em] uppercase">
                       {t.name}, {t.age}
                     </p>
                   </footer>
@@ -129,19 +123,17 @@ export function TestimonialsSection() {
           </div>
 
           {/* Controls */}
-          <div className="flex items-center justify-center gap-8 mt-24">
-            {/* Prev */}
+          <div className="flex items-center justify-center gap-8 mt-20">
             <button
               onClick={handlePrev}
-              className="w-12 h-12 flex items-center justify-center border border-[#F5F5F0]/10 hover:border-[#C9A96E]/40 text-[#F5F5F0]/30 hover:text-[#C9A96E] transition-all duration-300"
+              className="w-11 h-11 flex items-center justify-center border border-[#E8E2D8]/8 hover:border-[#C4956A]/30 text-[#E8E2D8]/25 hover:text-[#C4956A] transition-all duration-300"
               aria-label="Предыдущий отзыв"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
               </svg>
             </button>
 
-            {/* Dots */}
             <div className="flex items-center gap-2">
               {TESTIMONIALS.map((_, i) => (
                 <button
@@ -150,24 +142,23 @@ export function TestimonialsSection() {
                     setDirection(i > current ? 1 : -1);
                     setCurrent(i);
                   }}
-                  className="transition-all duration-300"
                   aria-label={`Отзыв ${i + 1}`}
+                  className="transition-all duration-400"
                   style={{
-                    width: i === current ? 24 : 6,
+                    width: i === current ? 28 : 6,
                     height: 2,
-                    background: i === current ? "#C9A96E" : "rgba(245,245,240,0.2)",
+                    background: i === current ? "#C4956A" : "rgba(232,226,216,0.15)",
                   }}
                 />
               ))}
             </div>
 
-            {/* Next */}
             <button
               onClick={handleNext}
-              className="w-12 h-12 flex items-center justify-center border border-[#F5F5F0]/10 hover:border-[#C9A96E]/40 text-[#F5F5F0]/30 hover:text-[#C9A96E] transition-all duration-300"
+              className="w-11 h-11 flex items-center justify-center border border-[#E8E2D8]/8 hover:border-[#C4956A]/30 text-[#E8E2D8]/25 hover:text-[#C4956A] transition-all duration-300"
               aria-label="Следующий отзыв"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </button>

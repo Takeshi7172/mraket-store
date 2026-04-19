@@ -7,24 +7,30 @@ interface NotePyramidProps {
 interface NoteRowProps {
   tier: "Верхние" | "Средние" | "Базовые";
   notes: string[];
-  accentClass: string;
-  dotClass: string;
+  opacity: number;
 }
 
-function NoteRow({ tier, notes, accentClass, dotClass }: NoteRowProps) {
+function NoteRow({ tier, notes, opacity }: NoteRowProps) {
   return (
-    <div className="flex items-start gap-4">
-      <div className="flex-shrink-0 w-24 text-right">
-        <span className={`text-xs tracking-widest uppercase ${accentClass}`}>
+    <div className="flex items-start gap-5">
+      <div className="flex-shrink-0 w-20 text-right pt-0.5">
+        <span
+          className="text-[10px] tracking-[0.3em] uppercase"
+          style={{ color: `rgba(196,149,106,${opacity})` }}
+        >
           {tier}
         </span>
       </div>
-      <div className={`w-px self-stretch ${dotClass} mt-1`} />
+      <div
+        className="w-px self-stretch mt-1"
+        style={{ background: `rgba(196,149,106,${opacity * 0.5})` }}
+      />
       <div className="flex flex-wrap gap-2 pb-6">
         {notes.map((note) => (
           <span
             key={note}
-            className="text-xs border border-[#0A0A0A]/15 text-[#0A0A0A]/70 px-3 py-1"
+            className="text-[11px] border px-3 py-1 text-[#1A1814]/60"
+            style={{ borderColor: "rgba(26,24,20,0.1)" }}
           >
             {note}
           </span>
@@ -36,29 +42,14 @@ function NoteRow({ tier, notes, accentClass, dotClass }: NoteRowProps) {
 
 export function NotePyramid({ notes }: NotePyramidProps) {
   return (
-    <div className="space-y-0" aria-label="Пирамида нот аромата">
-      <h3 className="text-xs tracking-[0.3em] uppercase text-[#C9A96E] mb-6">
+    <div aria-label="Пирамида нот аромата">
+      <h3 className="text-[9px] tracking-[0.5em] uppercase text-[#C4956A] mb-6">
         Пирамида нот
       </h3>
       <div className="space-y-0">
-        <NoteRow
-          tier="Верхние"
-          notes={notes.top}
-          accentClass="text-[#C9A96E]"
-          dotClass="bg-[#C9A96E]"
-        />
-        <NoteRow
-          tier="Средние"
-          notes={notes.heart}
-          accentClass="text-[#0A0A0A]/50"
-          dotClass="bg-[#0A0A0A]/20"
-        />
-        <NoteRow
-          tier="Базовые"
-          notes={notes.base}
-          accentClass="text-[#0A0A0A]/30"
-          dotClass="bg-[#0A0A0A]/10"
-        />
+        <NoteRow tier="Верхние" notes={notes.top} opacity={1} />
+        <NoteRow tier="Средние" notes={notes.heart} opacity={0.6} />
+        <NoteRow tier="Базовые" notes={notes.base} opacity={0.35} />
       </div>
     </div>
   );

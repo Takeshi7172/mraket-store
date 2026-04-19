@@ -20,7 +20,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
       transition={{
         duration: 0.6,
         delay: (index % 4) * 0.08,
-        ease: "easeOut",
+        ease: [0.22, 1, 0.36, 1],
       }}
     >
       <Link
@@ -29,71 +29,56 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
         aria-label={`${product.name} — ${product.price.toLocaleString("ru-KZ")}₸`}
       >
         {/* Image */}
-        <motion.div
-          className="relative aspect-[3/4] bg-white overflow-hidden mb-5 rounded-xl"
-          whileHover={{ y: -4 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          style={{
-            boxShadow: "0 4px 24px rgba(201,169,110,0.08)",
-          }}
-        >
+        <div className="relative aspect-[3/4] overflow-hidden mb-5">
           <Image
             src={product.image}
             alt={product.name}
             fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover photo-warm transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
 
           {/* Category tag */}
           <div className="absolute top-3 left-3 z-10">
-            <span className="bg-[#0A0A0A]/70 text-[#F5F5F0] text-[9px] tracking-widest uppercase px-3 py-1 rounded-full">
+            <span className="bg-[#0B0A08]/60 backdrop-blur-sm text-[#E8E2D8] text-[8px] tracking-[0.2em] uppercase px-3 py-1.5">
               {CATEGORY_LABELS[product.category]}
             </span>
           </div>
 
-          {/* 2+1 promo badge */}
+          {/* 1+1 badge */}
           {product.category === "perfume" && (
             <div className="absolute top-3 right-3 z-10">
-              <span className="bg-[#C9A96E] text-[#0A0A0A] text-[9px] tracking-widest font-semibold uppercase px-2.5 py-1 rounded-full">
-                2+1
+              <span className="bg-[#C4956A] text-[#0B0A08] text-[8px] tracking-[0.2em] font-semibold uppercase px-3 py-1.5">
+                1+1
               </span>
             </div>
           )}
 
-          {/* Hover overlay — slides up */}
-          <div className="absolute inset-0 flex items-end overflow-hidden">
-            <div
-              className="w-full translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out pt-10 pb-5"
-              style={{
-                background: "linear-gradient(to top, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.4) 60%, transparent 100%)",
-              }}
-            >
-              <div className="px-4">
-                <span className="text-[10px] tracking-widest uppercase text-[#F5F5F0]/55 border-b border-[#F5F5F0]/20 pb-0.5">
-                  Подробнее →
-                </span>
-              </div>
-            </div>
+          {/* Hover overlay */}
+          <div className="absolute inset-0 bg-[#0B0A08]/0 group-hover:bg-[#0B0A08]/25 transition-colors duration-500" />
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+            <span className="text-[#E8E2D8] text-[9px] tracking-[0.4em] uppercase border border-[#E8E2D8]/25 px-5 py-2 backdrop-blur-sm">
+              Подробнее
+            </span>
           </div>
-        </motion.div>
+        </div>
 
         {/* Info */}
         <div className="space-y-1.5">
-          <p className="text-[10px] text-[#C9A96E] tracking-[0.3em] uppercase">
+          <p className="text-[9px] text-[#C4956A] tracking-[0.4em] uppercase">
             {product.brand}
           </p>
-          <h3 className="font-heading text-base lg:text-lg text-[#0A0A0A] leading-snug group-hover:text-[#C9A96E] transition-colors duration-200">
+          <h3 className="font-heading text-lg font-light text-[#1A1814] group-hover:text-[#C4956A] transition-colors duration-200">
             {product.name}
           </h3>
           {product.inspiration && (
-            <p className="text-xs text-[#0A0A0A]/35 italic">
+            <p className="text-[11px] text-[#1A1814]/30 italic">
               вдохновлён {product.inspiration}
             </p>
           )}
           <div className="flex items-center justify-between pt-1">
-            <span className="text-xs text-[#0A0A0A]/35">{product.volume}</span>
-            <span className="text-sm font-medium text-[#0A0A0A]">
+            <span className="text-[11px] text-[#1A1814]/30">{product.volume}</span>
+            <span className="text-sm text-[#1A1814]/70">
               {product.price.toLocaleString("ru-KZ")} ₸
             </span>
           </div>

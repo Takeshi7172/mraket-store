@@ -9,7 +9,7 @@ export interface Product {
   slug: string;
   name: string;
   brand: string;
-  category: "perfume" | "skincare" | "set";
+  category: "perfume" | "skincare";
   price: number;
   volume: string;
   description: string;
@@ -19,7 +19,10 @@ export interface Product {
   featured?: boolean;
 }
 
-export const PROMO_2_PLUS_1 = "2+1 — купи 2 аромата, получи третий в подарок";
+export const PROMO_1_PLUS_1 =
+  "1+1 — купи 1 аромат за 9 900 ₸, получи второй в подарок. Два за 14 990 ₸";
+// backwards-compat alias
+export const PROMO_2_PLUS_1 = PROMO_1_PLUS_1;
 export const FREE_DELIVERY_THRESHOLD = 5000;
 export const FREE_DELIVERY_TEXT = "Бесплатная доставка по Астане от 5 000 ₸";
 
@@ -31,7 +34,7 @@ export const products: Product[] = [
     name: "Barakkat Rouge 540",
     brand: "AUMEKA",
     category: "perfume",
-    price: 4500,
+    price: 9900,
     volume: "60 мл",
     description:
       "Восточно-цветочный аромат с шафраном и жасмином — богатый, тёплый, незабываемый. Вдохновлён Maison Francis Kurkdjian Baccarat Rouge 540.",
@@ -41,7 +44,7 @@ export const products: Product[] = [
       heart: ["Амариллис", "Кедр"],
       base: ["Амбра", "Мускус", "Ладан"],
     },
-    image: "/products/photo_10.jpg",
+    image: "/products/barakkat-rouge-540.png",
     featured: true,
   },
   {
@@ -50,7 +53,7 @@ export const products: Product[] = [
     name: "Lost Cherry",
     brand: "AUMEKA",
     category: "perfume",
-    price: 4500,
+    price: 9900,
     volume: "60 мл",
     description:
       "Соблазнительный сладкий аромат с тёмной вишней и ванилью. Дерзкий, чувственный, гипнотизирующий. Вдохновлён Tom Ford.",
@@ -60,7 +63,7 @@ export const products: Product[] = [
       heart: ["Турецкая роза", "Хорватская роза"],
       base: ["Бензоин", "Ваниль", "Перу бальзам"],
     },
-    image: "/products/photo_9.jpg",
+    image: "/products/lost-cherry.png",
     featured: true,
   },
   {
@@ -69,7 +72,7 @@ export const products: Product[] = [
     name: "Tobacco Vanille",
     brand: "AUMEKA",
     category: "perfume",
-    price: 4500,
+    price: 9900,
     volume: "60 мл",
     description:
       "Культовый тёплый аромат с табаком и ванилью. Пряный, обволакивающий, уютный как вечер у камина. Вдохновлён Tom Ford.",
@@ -79,7 +82,7 @@ export const products: Product[] = [
       heart: ["Ваниль", "Какао"],
       base: ["Тонка", "Сухофрукты", "Смолы"],
     },
-    image: "/products/photo_11.jpg",
+    image: "/products/tobacco-vanille.png",
   },
   {
     id: "p-04",
@@ -87,7 +90,7 @@ export const products: Product[] = [
     name: "BLEU for Men",
     brand: "AUMEKA",
     category: "perfume",
-    price: 4500,
+    price: 9900,
     volume: "65 мл",
     description:
       "Свежий дровяной аромат для современного мужчины. Мятная свежесть открывается тёплым кедром и сандалом. Вдохновлён Chanel.",
@@ -97,7 +100,7 @@ export const products: Product[] = [
       heart: ["Кедр", "Имбирь", "Изо Е Супер"],
       base: ["Сандал", "Пачули", "Лабданум"],
     },
-    image: "/products/photo_4.jpg",
+    image: "/products/bleu-for-men.png",
     featured: true,
   },
   {
@@ -106,7 +109,7 @@ export const products: Product[] = [
     name: "CREAD 1790",
     brand: "AUMEKA",
     category: "perfume",
-    price: 4500,
+    price: 9900,
     volume: "60 мл",
     description:
       "Легендарный фруктово-дровяной аромат. Ананас, берёза и мускус создают подпись, которую узнают по всему миру. Вдохновлён Creed Aventus.",
@@ -116,25 +119,7 @@ export const products: Product[] = [
       heart: ["Берёза", "Патчули", "Роза"],
       base: ["Мускус", "Окмосс", "Амбра", "Ваниль"],
     },
-    image: "/products/photo_7.jpg",
-  },
-  {
-    id: "p-06",
-    slug: "bright-crystal",
-    name: "Bright Crystal",
-    brand: "AUMEKA",
-    category: "perfume",
-    price: 4500,
-    volume: "60 мл",
-    description:
-      "Лёгкий цветочный аромат с магнолией, лотосом и мускусом. Нежный, женственный, чистый как хрусталь. Вдохновлён Versace.",
-    inspiration: "Versace Bright Crystal",
-    notes: {
-      top: ["Гранат", "Лотос", "Юзу"],
-      heart: ["Магнолия", "Пион", "Роза"],
-      base: ["Мускус", "Амбра", "Акцент"],
-    },
-    image: "/products/photo_20.jpg",
+    image: "/products/cread-1790.png",
   },
   {
     id: "p-07",
@@ -142,7 +127,7 @@ export const products: Product[] = [
     name: "Le Fleur Narcotique",
     brand: "AUMEKA",
     category: "perfume",
-    price: 4500,
+    price: 9900,
     volume: "60 мл",
     description:
       "Пленительный белый цветочный аромат с пионом, мускусом и древесными нотами. Парижская чувственность в каждом флаконе. Вдохновлён Ex Nihilo.",
@@ -152,40 +137,9 @@ export const products: Product[] = [
       heart: ["Роза", "Жасмин", "Мускус"],
       base: ["Белый мускус", "Древесные ноты", "Амбра"],
     },
-    image: "/products/photo_2.jpg",
-  },
-  {
-    id: "p-08",
-    slug: "j20",
-    name: "J20",
-    brand: "AUMEKA",
-    category: "perfume",
-    price: 4500,
-    volume: "60 мл",
-    description:
-      "Минималистичный молекулярный аромат, построенный на Iso E Super и амброксане. Становится вашей второй кожей. Вдохновлён Escentric Molecules.",
-    inspiration: "Escentric Molecules Molecule 02",
-    notes: {
-      top: ["Амброксан"],
-      heart: ["Iso E Super", "Амбра"],
-      base: ["Белый мускус"],
-    },
-    image: "/products/photo_5.jpg",
+    image: "/products/le-fleur-narcotique.png",
   },
   // ── Уход за кожей ────────────────────────────────────────────────────────
-  {
-    id: "s-01",
-    slug: "k-beauty-4in1-cream",
-    name: "4-in-1 K-beauty Cream",
-    brand: "K-beauty",
-    category: "skincare",
-    price: 1500,
-    volume: "50 мл",
-    description:
-      "Многофункциональный крем-ампула — 4 шага в 1 продукте: ампула, эссенция, крем и церамиды. Интенсивное увлажнение и восстановление барьера кожи.",
-    image: "/products/photo_8.jpg",
-    featured: true,
-  },
   {
     id: "s-02",
     slug: "lancome-blanc-expert",
@@ -196,44 +150,43 @@ export const products: Product[] = [
     volume: "80 мл",
     description:
       "Осветляющий крем Lancome для сияния и выравнивания тона кожи. Флагманская формула — Advanced Génifique Brightening Technology.",
-    image: "/products/photo_6.jpg",
+    image: "/products/lancome-blanc-expert.png",
   },
   {
     id: "s-03",
-    slug: "miss-lara-lip",
-    name: "Miss Lara Lip",
-    brand: "Miss Lara",
+    slug: "kiko-milano-liquid-skin",
+    name: "KIKO Milano Liquid Skin",
+    brand: "KIKO Milano",
     category: "skincare",
-    price: 800,
+    price: 2000,
+    volume: "30 мл",
+    description:
+      "Лёгкий тональный флюид с натуральным финишем. Идеально выравнивает тон, не забивает поры, держится весь день.",
+    image: "/products/kiko-milano-liquid-skin.png",
+  },
+  {
+    id: "s-04",
+    slug: "pusy-brow-gel",
+    name: "PUSY Brow Gel",
+    brand: "PUSY",
+    category: "skincare",
+    price: 1500,
     volume: "10 мл",
     description:
-      "Интенсивно увлажняющий продукт для губ. Нежная текстура восстанавливает мягкость и цвет, дарит ощущение ухоженных губ.",
-    image: "/products/photo_15.jpg",
-  },
-  // ── Наборы ───────────────────────────────────────────────────────────────
-  {
-    id: "g-01",
-    slug: "first-date-set",
-    name: "Набор «First Date»",
-    brand: "SENSO",
-    category: "set",
-    price: 8000,
-    volume: "2 × 60 мл",
-    description:
-      "Два аромата на выбор из нашей парфюмерной коллекции. Идеальный способ открыть для себя AUMEKA или подарить близкому человеку.",
-    image: "/products/photo_1.jpg",
+      "Фиксирующий гель для бровей. Надёжная фиксация на весь день, естественный объём и ухоженный вид без утяжеления.",
+    image: "/products/pusy-brow-gel.png",
   },
   {
-    id: "g-02",
-    slug: "gift-set",
-    name: "Набор «Gift»",
-    brand: "SENSO",
-    category: "set",
-    price: 5500,
-    volume: "60 мл + маска",
+    id: "s-05",
+    slug: "gold-retinol-mask",
+    name: "Gold Retinol Snake Venom Mask",
+    brand: "SENZA Beauty",
+    category: "skincare",
+    price: 1200,
+    volume: "1 шт",
     description:
-      "Парфюм на выбор + маска для лица в подарочной упаковке. Забота о себе или идеальный подарок к любому поводу.",
-    image: "/products/photo_26.jpg",
+      "Золотая маска с ретинолом и пептидом змеиного яда. Лифтинг-эффект, разглаживание морщин, сияние за 20 минут.",
+    image: "/products/gold-retinol-mask.png",
   },
 ];
 
@@ -279,5 +232,4 @@ export function getRelatedProducts(
 export const CATEGORY_LABELS: Record<Product["category"], string> = {
   perfume: "Парфюмерия",
   skincare: "Уход за кожей",
-  set: "Наборы",
 };

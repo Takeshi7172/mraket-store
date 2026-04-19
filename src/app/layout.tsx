@@ -1,33 +1,35 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Playfair_Display } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { NavbarWrapper } from "@/components/features/layout/NavbarWrapper";
 import { Footer } from "@/components/features/layout/Footer";
 import { WhatsAppCTA } from "@/components/features/layout/WhatsAppCTA";
 
-const inter = Inter({
-  variable: "--font-inter",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin", "cyrillic"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin", "cyrillic"],
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "SENZA — Ароматы, уход и подарки в Астане",
   description:
-    "SENZA — кураторы чувств в Астане. Ароматы, уход за кожей и подарки, собранные со вкусом. Акция 2+1 на ароматы. Доставка по Астане.",
+    "SENZA — кураторы чувств в Астане. Подбираем ароматы, уход и подарки под твоё настроение. Акция 1+1. Доставка по Астане.",
   keywords:
-    "парфюмерия Астана, уход за кожей Астана, корейская косметика, подарки Астана, ароматы куратор, SENZA",
+    "парфюмерия Астана, уход за кожей Астана, корейская косметика, подарки Астана, ароматы, SENZA",
   openGraph: {
     title: "SENZA — Ароматы, уход и подарки в Астане",
     description:
-      "SENZA — кураторы чувств. Отбираем ароматы, уход и подарки, которые раскрывают тебя. Акция 2+1 на ароматы.",
+      "SENZA — кураторы чувств. Отбираем ароматы, уход и подарки, которые раскрывают тебя. Акция 1+1 на ароматы.",
     type: "website",
     locale: "ru_KZ",
     siteName: "SENZA",
@@ -42,7 +44,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="ru"
-      className={`${inter.variable} ${playfair.variable} h-full`}
+      className={`${cormorant.variable} ${dmSans.variable} h-full`}
     >
       <body className="min-h-full flex flex-col antialiased">
         <NavbarWrapper />

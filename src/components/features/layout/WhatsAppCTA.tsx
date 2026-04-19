@@ -9,10 +9,8 @@ export function WhatsAppCTA() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Заказать через WhatsApp"
-      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-xl hover:bg-[#20b858] transition-all duration-300 hover:scale-110"
+      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl hover:bg-[#20b858] transition-all duration-300 hover:scale-110 wa-pulse"
     >
-      {/* Pulse ring */}
-      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30" />
       <svg
         viewBox="0 0 24 24"
         fill="currentColor"

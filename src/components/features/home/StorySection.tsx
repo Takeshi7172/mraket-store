@@ -1,92 +1,101 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-
-const GRAIN_SVG = `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E")`;
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export function StorySection() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
+
   return (
     <section
-      className="relative py-32 lg:py-44 overflow-hidden"
-      style={{ background: "#0E0E0E" }}
+      ref={ref}
+      className="relative py-0 overflow-hidden grain-overlay"
+      style={{ background: "#0B0A08" }}
       aria-label="Наш подход"
     >
-      {/* Film grain */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.15]"
-        aria-hidden="true"
-        style={{ backgroundImage: GRAIN_SVG }}
-      />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Image */}
-          <motion.div
-            className="relative order-1 lg:order-2 overflow-hidden"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
+          {/* Image — full height, parallax */}
+          <div className="relative h-[60vh] lg:h-auto overflow-hidden order-1 lg:order-2">
+            <motion.div
+              className="absolute inset-[-15%] w-[130%] h-[130%]"
+              style={{ y: imageY }}
+            >
               <Image
                 src="/products/photo_10.jpg"
                 alt="SENZA аромат"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center"
-                style={{ filter: "sepia(25%) contrast(1.15) brightness(0.82)" }}
+                className="object-cover photo-noir"
               />
-              {/* Gradient overlay */}
-              <div
-                className="absolute inset-0"
-                aria-hidden="true"
-                style={{
-                  background:
-                    "linear-gradient(160deg, rgba(201,169,110,0.12) 0%, transparent 40%, rgba(14,14,14,0.55) 100%)",
-                }}
-              />
-            </div>
-          </motion.div>
+            </motion.div>
+            {/* Gradient fade to left */}
+            <div
+              className="absolute inset-0 pointer-events-none hidden lg:block"
+              aria-hidden="true"
+              style={{
+                background:
+                  "linear-gradient(to right, rgba(11,10,8,0.7) 0%, rgba(11,10,8,0.0) 40%)",
+              }}
+            />
+            {/* Bottom gradient on mobile */}
+            <div
+              className="absolute inset-0 pointer-events-none lg:hidden"
+              aria-hidden="true"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(11,10,8,0.9) 0%, rgba(11,10,8,0.0) 50%)",
+              }}
+            />
+          </div>
 
           {/* Text */}
-          <motion.div
-            className="order-2 lg:order-1 space-y-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-          >
-            <p className="text-[#C9A96E] text-[9px] tracking-[0.6em] uppercase">
-              Наш подход
-            </p>
-
-            <h2
-              className="font-heading text-[#F5F5F0] leading-tight"
-              style={{ fontSize: "clamp(2.2rem,5vw,3.5rem)" }}
+          <div className="relative z-10 flex flex-col justify-center px-8 lg:px-16 xl:px-24 py-20 lg:py-32 order-2 lg:order-1">
+            <motion.div
+              className="space-y-8 max-w-lg"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              Каждый аромат —<br />
-              <em className="text-[#C9A96E]">это состояние</em>
-            </h2>
-
-            <p className="text-[#F5F5F0]/55 text-base leading-relaxed max-w-md">
-              Тёплый восточный на вечер. Свежий цитрусовый на каждый день.
-              Мы знаем ноты и поможем найти именно твой.
-            </p>
-
-            <div className="w-10 h-px" style={{ background: "rgba(201,169,110,0.4)" }} />
-
-            <blockquote className="relative pl-5">
-              <div
-                className="absolute left-0 top-0 w-px h-full"
-                style={{ background: "rgba(201,169,110,0.3)" }}
-              />
-              <p className="font-heading text-lg text-[#F5F5F0]/65 italic leading-snug">
-                «Аромат — это то, как ты себя чувствуешь.»
+              <p className="text-[#C4956A] text-[9px] tracking-[0.6em] uppercase">
+                Наш подход
               </p>
-            </blockquote>
-          </motion.div>
+
+              <h2
+                className="font-heading font-light text-[#E8E2D8] leading-[1.1]"
+                style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
+              >
+                Каждый аромат —<br />
+                <em className="text-[#C4956A]" style={{ fontStyle: "italic" }}>
+                  это состояние
+                </em>
+              </h2>
+
+              <div className="w-12 h-px bg-[#C4956A]/40" />
+
+              <p className="text-[#E8E2D8]/45 text-[15px] leading-[1.8]">
+                Тёплый восточный на вечер. Свежий цитрусовый на каждый день.
+                Мы знаем ноты и поможем найти именно твой.
+              </p>
+
+              <blockquote className="relative pl-6">
+                <div
+                  className="absolute left-0 top-0 w-px h-full"
+                  style={{ background: "rgba(196,149,106,0.25)" }}
+                />
+                <p className="font-heading text-xl text-[#E8E2D8]/50 italic leading-snug">
+                  &laquo;Аромат — это то, как ты себя чувствуешь.&raquo;
+                </p>
+              </blockquote>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

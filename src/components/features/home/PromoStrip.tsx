@@ -1,66 +1,58 @@
+"use client";
+
 import Link from "next/link";
-import { PROMO_2_PLUS_1 } from "@/data/products";
+import { motion } from "framer-motion";
 
 export function PromoStrip() {
   return (
     <section
-      className="relative py-24 px-6 overflow-hidden"
-      style={{ background: "#0E0E0E" }}
-      aria-label="Акция 2+1"
+      className="relative py-28 lg:py-36 px-6 overflow-hidden"
+      style={{ background: "#FAF5ED" }}
+      aria-label="Акция 1+1"
     >
-      {/* Top gold separator */}
-      <div
-        className="absolute top-0 left-0 right-0 h-px pointer-events-none"
-        aria-hidden="true"
-        style={{
-          background:
-            "linear-gradient(to right, transparent, rgba(201,169,110,0.2), transparent)",
-        }}
-      />
-
-      {/* Subtle gold radial glow behind the number */}
+      {/* Copper glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
         style={{
           background:
-            "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(201,169,110,0.07) 0%, transparent 65%)",
+            "radial-gradient(ellipse 40% 50% at 50% 50%, rgba(196,149,106,0.06) 0%, transparent 70%)",
         }}
       />
 
-      <div className="relative z-10 max-w-3xl mx-auto text-center">
-        <p className="text-[#C9A96E] text-[9px] tracking-[0.5em] uppercase mb-4">
+      <motion.div
+        className="relative z-10 max-w-3xl mx-auto text-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <p className="text-[#C4956A] text-[9px] tracking-[0.6em] uppercase mb-6">
           Специальное предложение
         </p>
+
         <p
-          className="font-heading text-[#C9A96E] mb-4"
-          style={{ fontSize: "clamp(3rem,8vw,5rem)", lineHeight: 1 }}
+          className="font-heading font-light text-[#1A1814] mb-4"
+          style={{ fontSize: "clamp(4rem, 10vw, 7rem)", lineHeight: 0.9 }}
         >
-          2+1
+          1+1
         </p>
-        <p className="text-[#F5F5F0]/60 text-base mb-8">
-          Два аромата — третий в подарок
+
+        <p className="text-[#1A1814]/50 text-lg mb-10">
+          Купи один аромат — второй в подарок
         </p>
+
         <Link
           href="/catalog"
-          className="inline-flex items-center gap-2 bg-[#C9A96E] text-[#1A1A1A] px-8 py-3.5 text-xs tracking-[0.3em] uppercase font-medium hover:bg-[#B8944F] transition-colors duration-300 rounded-full"
+          className="inline-flex items-center gap-3 bg-[#0B0A08] text-[#E8E2D8] px-10 py-4 text-[11px] tracking-[0.3em] uppercase font-medium hover:bg-[#C4956A] hover:text-[#0B0A08] transition-colors duration-400"
         >
           Выбрать ароматы
         </Link>
-        <p className="mt-4 text-[#F5F5F0]/25 text-xs">
-          {PROMO_2_PLUS_1}
-        </p>
-      </div>
 
-      {/* Bottom gold separator */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-px pointer-events-none"
-        aria-hidden="true"
-        style={{
-          background:
-            "linear-gradient(to right, transparent, rgba(201,169,110,0.2), transparent)",
-        }}
-      />
+        <p className="mt-6 text-[#1A1814]/25 text-xs">
+          Акция действует на всю парфюмерную коллекцию AUMEKA
+        </p>
+      </motion.div>
     </section>
   );
 }
