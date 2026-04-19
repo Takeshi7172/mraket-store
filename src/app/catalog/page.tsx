@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ProductGrid } from "@/components/features/catalog/ProductGrid";
+import { PromoFeed } from "@/components/features/catalog/PromoFeed";
 
 export const metadata: Metadata = {
   title: "Каталог — SENZA | Ароматы, уход и подарки в Астане",
@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 
 export default function CatalogPage() {
   return (
-    <div className="min-h-screen bg-[#FAF5ED] pt-20">
-      {/* Header */}
+    <div className="min-h-screen bg-[#FAF5ED] pt-[64px] lg:pt-[80px]">
+      {/* Hero Header */}
       <div
-        className="relative pt-16 pb-20 overflow-hidden grain-overlay"
+        className="relative pt-14 pb-18 overflow-hidden grain-overlay"
         style={{ background: "#0B0A08" }}
       >
         <div
@@ -46,17 +46,15 @@ export default function CatalogPage() {
             Каталог
           </h1>
           <p className="text-[#E8E2D8]/35 text-base max-w-md leading-relaxed">
-            Ароматы, уход за кожей и подарочные наборы
+            Парфюмерия AUMEKA, уход за кожей и подарочные наборы — всё в одном месте
           </p>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 divider-copper" />
       </div>
 
-      {/* Grid */}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 lg:py-24">
-        <ProductGrid />
-      </div>
+      {/* Promo Feed */}
+      <PromoFeed />
     </div>
   );
 }
