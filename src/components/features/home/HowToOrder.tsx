@@ -72,7 +72,7 @@ export function HowToOrder() {
                 <h3 className="font-heading text-2xl font-light text-[#E8E2D8] mb-3">
                   {step.title}
                 </h3>
-                <p className="text-[#E8E2D8]/35 text-sm leading-relaxed max-w-xs">
+                <p className="text-[#E8E2D8]/55 text-sm leading-relaxed max-w-xs">
                   {step.desc}
                 </p>
               </motion.div>

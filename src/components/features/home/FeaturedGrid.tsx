@@ -38,7 +38,7 @@ export function FeaturedGrid() {
           >
             <Link
               href="/catalog"
-              className="group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-[#1A1814]/35 hover:text-[#C4956A] transition-colors duration-300"
+              className="group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-[#1A1814]/60 hover:text-[#C4956A] transition-colors duration-300"
             >
               Весь каталог
               <span className="inline-block group-hover:translate-x-1.5 transition-transform duration-300">
@@ -77,7 +77,7 @@ export function FeaturedGrid() {
                       src={product.image}
                       alt={product.name}
                       fill
-                      className="object-contain transition-transform duration-500 group-hover:scale-105"
+                      className="object-contain transition-transform duration-500 group-hover:scale-105 product-image-blend"
                       sizes={
                         isLarge
                           ? "(max-width: 1024px) 50vw, 33vw"
@@ -103,7 +103,7 @@ export function FeaturedGrid() {
                     <h3 className="font-heading text-lg lg:text-xl font-light text-[#1A1814] group-hover:text-[#C4956A] transition-colors duration-300">
                       {product.name}
                     </h3>
-                    <p className="text-sm text-[#1A1814]/70">
+                    <p className="text-sm text-[#1A1814]/80">
                       {product.price.toLocaleString("ru-KZ")} ₸
                     </p>
                   </div>
@@ -111,6 +111,17 @@ export function FeaturedGrid() {
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Full-width CTA to catalog */}
+        <div className="mt-16 text-center">
+          <Link
+            href="/catalog"
+            className="inline-flex items-center gap-3 bg-[#1A1814] text-[#FAF5ED] px-12 py-5 text-[12px] tracking-[0.3em] uppercase font-medium hover:bg-[#C4956A] hover:text-[#0B0A08] transition-colors duration-300"
+          >
+            Смотреть весь каталог
+            <span>&rarr;</span>
+          </Link>
         </div>
       </div>
     </section>

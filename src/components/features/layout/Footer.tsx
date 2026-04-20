@@ -16,7 +16,7 @@ export function Footer() {
                 SENZA
               </span>
             </Link>
-            <p className="text-[#E8E2D8]/30 text-sm leading-relaxed max-w-xs">
+            <p className="text-[#E8E2D8]/45 text-sm leading-relaxed max-w-xs">
               Ароматы и корейская косметика в Астане. Выбираем лучшее — привозим к вам.
             </p>
             <p className="text-[9px] text-[#C4956A]/60 uppercase tracking-[0.5em]">
@@ -38,14 +38,14 @@ export function Footer() {
 
           {/* Navigation */}
           <div className="space-y-5">
-            <h3 className="text-[#E8E2D8]/30 text-[9px] tracking-[0.5em] uppercase">Навигация</h3>
+            <h3 className="text-[#E8E2D8]/40 text-[9px] tracking-[0.5em] uppercase">Навигация</h3>
             <nav className="flex flex-col gap-3" aria-label="Навигация в подвале">
               {[
                 { href: "/catalog", label: "Каталог" },
                 { href: "/catalog?category=perfume", label: "Парфюмерия" },
                 { href: "/catalog?category=skincare", label: "Уход за кожей" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="text-sm text-[#E8E2D8]/30 hover:text-[#C4956A] transition-colors duration-200">
+                <Link key={link.href} href={link.href} className="text-sm text-[#E8E2D8]/45 hover:text-[#C4956A] transition-colors duration-200">
                   {link.label}
                 </Link>
               ))}
@@ -54,8 +54,8 @@ export function Footer() {
 
           {/* Contact */}
           <div className="space-y-5">
-            <h3 className="text-[#E8E2D8]/30 text-[9px] tracking-[0.5em] uppercase">Связь</h3>
-            <p className="text-[#E8E2D8]/30 text-sm leading-relaxed max-w-xs">
+            <h3 className="text-[#E8E2D8]/40 text-[9px] tracking-[0.5em] uppercase">Связь</h3>
+            <p className="text-[#E8E2D8]/45 text-sm leading-relaxed max-w-xs">
               Заказ и консультации — через WhatsApp. Отвечаем быстро.
             </p>
             <a
@@ -77,10 +77,10 @@ export function Footer() {
           className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
           style={{ borderTop: "1px solid rgba(232,226,216,0.05)" }}
         >
-          <p className="text-[10px] text-[#E8E2D8]/15">
+          <p className="text-[10px] text-[#E8E2D8]/30">
             &copy; {new Date().getFullYear()} SENZA. Астана, Казахстан.
           </p>
-          <div className="flex flex-col sm:flex-row items-center gap-3 text-[10px] text-[#E8E2D8]/15">
+          <div className="flex flex-col sm:flex-row items-center gap-3 text-[10px] text-[#E8E2D8]/30">
             <span className="text-[#C4956A]/40">{FREE_DELIVERY_TEXT}</span>
             <span className="hidden sm:inline text-[#E8E2D8]/8">&middot;</span>
             <span>Оплата при получении</span>

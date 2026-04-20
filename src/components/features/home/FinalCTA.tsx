@@ -33,7 +33,7 @@ export function FinalCTA() {
           Не знаешь,<br />с чего начать?
         </h2>
 
-        <p className="text-[#E8E2D8]/40 text-base leading-relaxed mb-12 max-w-md mx-auto">
+        <p className="text-[#E8E2D8]/60 text-base leading-relaxed mb-12 max-w-md mx-auto">
           Напиши нам — подберём аромат или уход под твоё настроение и характер.
         </p>
 
@@ -45,7 +45,7 @@ export function FinalCTA() {
               href={`https://wa.me/${number}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 text-[#E8E2D8]/60 hover:text-[#25D366] transition-colors duration-300 text-sm tracking-wide"
+              className="inline-flex items-center gap-3 text-[#E8E2D8]/75 hover:text-[#25D366] transition-colors duration-300 text-sm tracking-wide"
             >
               <WhatsAppIcon className="w-4 h-4 flex-shrink-0" />
               <span>{number}</span>
@@ -60,7 +60,7 @@ export function FinalCTA() {
           Весь каталог
         </Link>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-[10px] text-[#E8E2D8]/20 tracking-wide mt-10">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-[10px] text-[#E8E2D8]/35 tracking-wide mt-10">
           <span>{FREE_DELIVERY_TEXT}</span>
           <span className="hidden sm:inline text-[#E8E2D8]/8">&middot;</span>
           <span>Оплата при получении</span>

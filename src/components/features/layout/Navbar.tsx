@@ -74,7 +74,7 @@ export function Navbar() {
                     "nav-link text-[11px] tracking-[0.25em] uppercase transition-colors duration-200",
                     pathname === link.href
                       ? "text-[#C4956A]"
-                      : "text-[#E8E2D8]/50 hover:text-[#C4956A]"
+                      : "text-[#E8E2D8]/65 hover:text-[#C4956A]"
                   )}
                 >
                   {link.label}
@@ -89,7 +89,7 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Написать в WhatsApp"
-                className="hidden md:flex items-center gap-2 text-[#E8E2D8]/40 hover:text-[#25D366] transition-colors duration-200"
+                className="hidden md:flex items-center gap-2 text-[#E8E2D8]/55 hover:text-[#25D366] transition-colors duration-200"
               >
                 <WhatsAppIcon className="w-4.5 h-4.5" />
               </a>

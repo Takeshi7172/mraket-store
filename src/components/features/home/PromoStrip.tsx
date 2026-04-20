@@ -28,7 +28,7 @@ export function PromoStrip() {
           1+1
         </p>
 
-        <p className="text-[#1A1814]/50 text-lg mb-10">
+        <p className="text-[#1A1814]/65 text-lg mb-10">
           Один флакон — 9 900 ₸. Два — 14 990. Математика простая.
         </p>
 
@@ -39,7 +39,7 @@ export function PromoStrip() {
           Выбрать ароматы
         </Link>
 
-        <p className="mt-6 text-[#1A1814]/25 text-xs">
+        <p className="mt-6 text-[#1A1814]/40 text-xs">
           Акция действует на всю парфюмерную коллекцию AUMEKA
         </p>
       </motion.div>
