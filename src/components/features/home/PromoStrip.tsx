@@ -10,16 +10,6 @@ export function PromoStrip() {
       style={{ background: "#FAF5ED" }}
       aria-label="Акция 1+1"
     >
-      {/* Copper glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden="true"
-        style={{
-          background:
-            "radial-gradient(ellipse 40% 50% at 50% 50%, rgba(196,149,106,0.06) 0%, transparent 70%)",
-        }}
-      />
-
       <motion.div
         className="relative z-10 max-w-3xl mx-auto text-center"
         initial={{ opacity: 0, y: 20 }}

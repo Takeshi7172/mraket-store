@@ -6,7 +6,7 @@ const STEPS = [
   {
     num: "01",
     title: "Выберите",
-    desc: "Найдите аромат или набор в каталоге. Или напишите — подберём под настроение.",
+    desc: "Найдите аромат или уход в каталоге. Или напишите — подберём под настроение.",
   },
   {
     num: "02",
@@ -16,7 +16,7 @@ const STEPS = [
   {
     num: "03",
     title: "Получите",
-    desc: "Оплата Kaspi QR. Доставка по Астане — бесплатно от 5 000 ₸.",
+    desc: "Оплата при получении. Доставка по Астане — бесплатно от 5 000 ₸.",
   },
 ];
 
@@ -35,26 +35,15 @@ export function HowToOrder() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-[#C4956A] text-[9px] tracking-[0.6em] uppercase mb-5">
-            Как заказать
-          </p>
           <h2
             className="font-heading font-light text-[#E8E2D8] leading-tight"
             style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
           >
-            Три шага до<br />
-            <em className="text-[#C4956A]" style={{ fontStyle: "italic" }}>твоего аромата</em>
+            Как заказать
           </h2>
         </motion.div>
 
         <div className="relative">
-          {/* Connecting line */}
-          <div
-            className="absolute top-8 left-8 right-8 h-px hidden lg:block"
-            style={{ background: "linear-gradient(to right, rgba(196,149,106,0.25), rgba(196,149,106,0.05))" }}
-            aria-hidden="true"
-          />
-
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
             {STEPS.map((step, i) => (
               <motion.div

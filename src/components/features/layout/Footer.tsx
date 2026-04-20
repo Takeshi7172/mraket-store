@@ -7,16 +7,6 @@ export function Footer() {
       {/* Copper line */}
       <div className="divider-copper" />
 
-      {/* Tagline */}
-      <div
-        className="text-center py-14 px-6"
-        style={{ borderBottom: "1px solid rgba(232,226,216,0.05)" }}
-      >
-        <p className="font-heading text-2xl lg:text-3xl text-[#E8E2D8]/15 italic font-light">
-          &laquo;Почувствуй, это SENZA.&raquo;
-        </p>
-      </div>
-
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-14 mb-14">
           {/* Brand */}
@@ -54,9 +44,6 @@ export function Footer() {
                 { href: "/catalog", label: "Каталог" },
                 { href: "/catalog?category=perfume", label: "Парфюмерия" },
                 { href: "/catalog?category=skincare", label: "Уход за кожей" },
-                { href: "/catalog?category=set", label: "Наборы" },
-                { href: "/about", label: "О нас" },
-                { href: "/contact", label: "Контакты" },
               ].map((link) => (
                 <Link key={link.href} href={link.href} className="text-sm text-[#E8E2D8]/30 hover:text-[#C4956A] transition-colors duration-200">
                   {link.label}
@@ -96,7 +83,7 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row items-center gap-3 text-[10px] text-[#E8E2D8]/15">
             <span className="text-[#C4956A]/40">{FREE_DELIVERY_TEXT}</span>
             <span className="hidden sm:inline text-[#E8E2D8]/8">&middot;</span>
-            <span>Оплата Kaspi QR</span>
+            <span>Оплата при получении</span>
           </div>
         </div>
       </div>

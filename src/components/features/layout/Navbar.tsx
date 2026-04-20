@@ -14,8 +14,6 @@ interface NavLink {
 
 const NAV_LINKS: NavLink[] = [
   { href: "/catalog", label: "Каталог" },
-  { href: "/about", label: "О нас" },
-  { href: "/contact", label: "Контакты" },
 ];
 
 export function Navbar() {
@@ -137,14 +135,6 @@ export function Navbar() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-[#0B0A08] flex flex-col items-center justify-center"
           >
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(ellipse 50% 40% at 50% 50%, rgba(196,149,106,0.05) 0%, transparent 70%)",
-              }}
-            />
-
             <nav className="relative z-10 flex flex-col items-center gap-8" aria-label="Мобильное меню">
               {NAV_LINKS.map((link, i) => (
                 <motion.div
@@ -186,16 +176,6 @@ export function Navbar() {
               </motion.div>
             </nav>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="absolute bottom-10 left-0 right-0 text-center"
-            >
-              <span className="text-[#E8E2D8]/10 text-[9px] tracking-[0.5em] uppercase">
-                Почувствуй, это SENZA
-              </span>
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

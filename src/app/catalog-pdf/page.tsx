@@ -628,7 +628,7 @@ function BackCoverPage() {
         {/* Info pills */}
         <div className="space-y-3 w-full max-w-xs">
           <InfoPill text="Астана, Казахстан" />
-          <InfoPill text="Оплата: Kaspi QR" />
+          <InfoPill text="Оплата при получении" />
           <InfoPill text="Бесплатная доставка от 5 000 ₸" />
         </div>
       </div>
